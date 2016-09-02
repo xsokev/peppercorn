@@ -2,7 +2,7 @@
 
 ##UNDER HEAVY DEVELOPMENT 
 
-![Peppercorn Logo](https://xsokev.github.io/peppercorn/img/blue.png)
+![Peppercorn Logo](https://xsokev.github.io/peppercorn/img/blue_medium.png)
 
 ##Getting Started
 ```
