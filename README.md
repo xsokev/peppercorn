@@ -1,8 +1,12 @@
 #Peppercorn for React Native
 
+##UNDER HEAVY DEVELOPMENT 
+
+![Peppercorn Logo](https://xsokev.github.io/peppercorn/img/blue.png)
+
 ##Getting Started
 ```
-npm install peppercorn
+npm install peppercorn -S
 ```
 
 ##Components
