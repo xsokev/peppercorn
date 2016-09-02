@@ -1,0 +1,21 @@
+{
+  "name": "react-native-ui-tools",
+  "version": "0.0.2",
+  "description": "A set of UI tools for creating React Native applications.",
+  "main": "./src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://xsokev@bitbucket.org/xsokev/react-native-ui-tools.git"
+  },
+  "dependencies": {
+    "react-native-vector-icons": "^2.0.3"
+  },
+  "peerDependencies": {
+    "react-native": "^0.29.0"
+  },
+  "keywords": [],
+  "author": "Kevin Armstrong",
+  "email": "kevin@kevinandre.com",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/xsokev/react-native-ui-tools#readme"
+}
