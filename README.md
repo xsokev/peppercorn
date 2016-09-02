@@ -14,4 +14,5 @@ Peppercorn also contains a few HTML elements that can be used for general text d
 ##Themes
 Peppercorn is highly themeable. Any color theme can easily be dropped in place and with a reference update, the application can be displayed with new colors of your preference.
 
-
+###More info
+View the [guide](https://xsokev.github.io/peppercorn/guide/) for more information.
