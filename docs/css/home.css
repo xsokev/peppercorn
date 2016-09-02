@@ -1,0 +1,44 @@
+.hidden {
+  display: none !important; }
+
+body.home {
+  padding-top: 40px;
+  text-align: center; }
+  body.home .main-menu {
+    width: 300px;
+    margin: 0 auto; }
+    body.home .main-menu a {
+      color: #1068c6;
+      border-bottom: 1px solid #FFFFFF; }
+      body.home .main-menu a:hover {
+        color: #0a437f;
+        border-bottom-color: #0a437f; }
+  body.home .logo {
+    margin-top: 30px;
+    width: 300px; }
+  body.home h1 {
+    margin: 0;
+    font-size: 4.0em;
+    font-weight: 100;
+    text-transform: uppercase; }
+  body.home h2 {
+    margin: 20px 0 0;
+    font-size: 1.6em;
+    font-weight: 600; }
+  body.home h5 {
+    font-size: 1.0em;
+    color: #555555;
+    margin-top: 50px; }
+  body.home .success {
+    background-color: #e58a00; }
+  body.home .repository {
+    background-color: #1b4b7c; }
+    body.home .repository img {
+      width: 16px;
+      height: 16px;
+      margin-right: 5px; }
+  body.home .twitter {
+    background-color: #50aaf1; }
+    body.home .twitter img {
+      width: 16px;
+      margin-right: 5px; }
