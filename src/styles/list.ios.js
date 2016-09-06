@@ -5,8 +5,8 @@ export const styles = StyleSheet.create({
   list: {
     flex: 1,
     borderBottomWidth: StyleSheet.hairlineWidth,
-    borderColor: Colors.clear,
-    backgroundColor: Colors.light
+    borderColor: theme.clear,
+    backgroundColor: theme.light
   },
   listMargin: {
     paddingHorizontal: margin*2
@@ -33,7 +33,7 @@ export const styles = StyleSheet.create({
   },
   multilineContainer: {
     minHeight: rowHeight,
-    backgroundColor: Colors.clear,
+    backgroundColor: theme.clear,
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
     marginVertical: margin

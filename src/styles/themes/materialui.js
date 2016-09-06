@@ -284,7 +284,7 @@ export const fullWhite = 'rgba(255, 255, 255, 1)';
 export const darkWhite = 'rgba(255, 255, 255, 0.87)';
 export const lightWhite = 'rgba(255, 255, 255, 0.54)';
 
-export default Colors = {
+const Colors = {
   white: white,
   black: black,
   light: grey50,
@@ -323,3 +323,5 @@ export default Colors = {
 
   fullBlack, darkBlack, lightBlack, minBlack, faintBlack, fullWhite, darkWhite, lightWhite
 };
+
+export default Colors;
