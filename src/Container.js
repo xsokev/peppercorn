@@ -3,7 +3,7 @@ import {View} from 'react-native';
 import {styles} from './styles/container';
 
 const Container = (props) => {
-  const contentStyle = [styles.content, props.padding && styles.padding, props.style];
+  const contentStyle = [styles.container, props.padding && styles.padding, props.style];
   return (
     <View {...props} style={contentStyle}>
       {props.children}

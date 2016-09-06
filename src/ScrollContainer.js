@@ -1,9 +1,9 @@
 import React, {PropTypes} from 'react';
 import {ScrollView, View} from 'react-native';
-import {styles} from './styles/content';
+import {styles} from './styles/container';
 
 const ScrollContainer = (props) => {
-  const contentStyle = [styles.content, props.padding && styles.padding, props.style];
+  const contentStyle = [styles.container, props.padding && styles.padding, props.style];
   if(props.scroll) {
     return (
       <ScrollView {...props} style={contentStyle}>
