@@ -2,7 +2,7 @@ import React, {PropTypes} from 'react';
 import {TouchableOpacity, View, Text} from 'react-native';
 import Icon from '../Icon';
 import {theme, themeColor, margin} from '../styles';
-import {styles} from '../styles/toolbar';
+import {styles} from '../styles/actionbar';
 
 const ActionItem = (props) => {
   const tc = themeColor(props);

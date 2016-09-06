@@ -5,7 +5,7 @@ const {height, width} = Dimensions.get('window');
 const margin = 8;
 const padding = 8;
 const rowHeight = 50;
-const toolbarHeight = 44;
+const actionbarHeight = 44;
 
 const componentToHex = c => {
   const hex = c.toString(16);
@@ -143,6 +143,6 @@ const setPosition = function (pos, dim, off){
 
 export {
   rgbToHex, hexToRGB, textFromRGB, textFromHex, shade, theme, themeColor,
-  height, width, margin, padding, rowHeight, toolbarHeight, setPosition
+  height, width, margin, padding, rowHeight, actionbarHeight, setPosition
 }
 export default theme;

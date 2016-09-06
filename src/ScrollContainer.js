@@ -3,18 +3,11 @@ import {ScrollView, View} from 'react-native';
 import {styles} from './styles/container';
 
 const ScrollContainer = (props) => {
-  const contentStyle = [styles.container, props.padding && styles.padding, props.style];
-  if(props.scroll) {
-    return (
-      <ScrollView {...props} style={contentStyle}>
-        {props.children}
-      </ScrollView>
-    );
-  }
+  const contentStyle = [props.padding && styles.padding, props.style];
   return (
-    <View {...props} style={contentStyle}>
+    <ScrollView {...props} style={styles.container} contentContainerStyle={contentStyle}>
       {props.children}
-    </View>
+    </ScrollView>
   );
 }
 
@@ -24,10 +17,7 @@ ScrollContainer.propTypes = {
     PropTypes.node,
   ]),
   padding: PropTypes.bool,
-  scroll: PropTypes.bool,
   style: PropTypes.any
 };
-ScrollContainer.defaultProps = {
-  scroll: true
-};
+ScrollContainer.defaultProps = {};
 export default ScrollContainer;

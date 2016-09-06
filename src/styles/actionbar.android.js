@@ -1,32 +1,32 @@
 import {StyleSheet} from 'react-native';
-import {theme, margin, padding, width, toolbarHeight} from './';
+import {theme, margin, padding, width, actionbarHeight} from './';
 
 export const styles = StyleSheet.create({
-  toolbar: {
-    height: toolbarHeight,
+  actionbar: {
+    height: actionbarHeight,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center'
   },
-  toolbarHeader: {
-    height: toolbarHeight+20,
+  actionbarHeader: {
+    height: actionbarHeight+20,
     paddingTop: 20
   },
-  toolbarFooter: {
+  actionbarFooter: {
     // stuff
   },
-  toolbarTitle: {
+  actionbarTitle: {
     fontWeight: '600',
     fontSize: 20
   },
-  toolbarLeft: {
+  actionbarLeft: {
     flexDirection: 'row',
     justifyContent: 'flex-start',
     overflow: 'hidden',
     paddingRight: padding,
     paddingVertical: padding
   },
-  toolbarRight: {
+  actionbarRight: {
     flexDirection: 'row',
     justifyContent: 'flex-end',
     overflow: 'hidden',

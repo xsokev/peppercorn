@@ -17,12 +17,14 @@ export {
   Card, ImageHeader,
   List, ListItem, Item, ItemContent, ItemText, ItemDivider, ItemHeader, ItemFooter, ItemIcon, ItemThumb,
   H1, H2, H3, H4, H5, H6, P, A, BLOCKQUOTE, HR, BR,
-  Badge, Button, Container, FloatButton, Icon, Range, ScrollContainer
+  Badge, Button, Container, FloatButton, Icon, Range, ScrollContainer,
+  theme, themeColor
 };
 export default {
   ActionBar, ActionItem,
   Card, ImageHeader,
   List, ListItem, Item, ItemContent, ItemText, ItemDivider, ItemHeader, ItemFooter, ItemIcon, ItemThumb,
   H1, H2, H3, H4, H5, H6, P, A, BLOCKQUOTE, HR, BR,
-  Badge, Button, Container, FloatButton, Icon, Range, ScrollContainer
+  Badge, Button, Container, FloatButton, Icon, Range, ScrollContainer,
+  theme, themeColor
 };

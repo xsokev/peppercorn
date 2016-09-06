@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react';
 import {View, Text} from 'react-native';
 import {themeColor} from '../styles';
-import {styles} from '../styles/toolbar';
+import {styles} from '../styles/actionbar';
 
 const ActionItemCenter = ({children}) => (
   <View style={[styles.actionBarItem, styles.actionBarCenter]}>{children}</View>

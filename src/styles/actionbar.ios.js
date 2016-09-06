@@ -1,24 +1,24 @@
 import {StyleSheet} from 'react-native';
-import {theme, margin, padding, width, toolbarHeight} from './';
+import {theme, margin, padding, width, actionbarHeight} from './';
 
 const sideWidth = 50;
 export const styles = StyleSheet.create({
-  toolbar: {
-    height: toolbarHeight,
+  actionbar: {
+    height: actionbarHeight,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between'
   },
-  toolbarHeader: {
+  actionbarHeader: {
     position: 'relative',
     top: 0, left: 0, right: 0,
-    height: toolbarHeight+20,
+    height: actionbarHeight+20,
     paddingTop: 20
   },
-  toolbarFooter: {
+  actionbarFooter: {
     alignSelf: 'flex-end',
     width: width,
-    height: toolbarHeight
+    height: actionbarHeight
   },
   actionItem: {
     flexDirection: 'row',
