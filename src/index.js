@@ -9,8 +9,12 @@ import Icon from './Icon';
 import Range from './Range';
 import ScrollContainer from './ScrollContainer';
 import { H1, H2, H3, H4, H5, H6, P, A, BLOCKQUOTE, HR, BR } from './Typography';
-import { theme, themeColor } from './styles';
+import theme from './themes';
 
+const actionbar = { ActionBar, ActionItem };
+const card = { Card, ImageHeader };
+const list = { List, ListItem, Item, ItemContent, ItemText, ItemDivider, ItemHeader, ItemFooter, ItemIcon, ItemThumb };
+const typography = { H1, H2, H3, H4, H5, H6, P, A, BLOCKQUOTE, HR, BR };
 
 export {
   ActionBar, ActionItem,
@@ -18,7 +22,13 @@ export {
   List, ListItem, Item, ItemContent, ItemText, ItemDivider, ItemHeader, ItemFooter, ItemIcon, ItemThumb,
   H1, H2, H3, H4, H5, H6, P, A, BLOCKQUOTE, HR, BR,
   Badge, Button, Container, FloatButton, Icon, Range, ScrollContainer,
-  theme, themeColor
+  
+  theme, 
+
+  actionbar,
+  card,
+  list,
+  typography
 };
 export default {
   ActionBar, ActionItem,
@@ -26,5 +36,11 @@ export default {
   List, ListItem, Item, ItemContent, ItemText, ItemDivider, ItemHeader, ItemFooter, ItemIcon, ItemThumb,
   H1, H2, H3, H4, H5, H6, P, A, BLOCKQUOTE, HR, BR,
   Badge, Button, Container, FloatButton, Icon, Range, ScrollContainer,
-  theme, themeColor
+
+  theme, 
+
+  actionbar,
+  card,
+  list,
+  typography
 };

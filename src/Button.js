@@ -1,6 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 import {Platform, Text, View, TouchableNativeFeedback, TouchableHighlight, TouchableOpacity} from 'react-native';
-import {themeColor, margin} from './styles';
+import theme from './themes';
 import {styles, buttonRadius} from './styles/button';
 
 class Button extends Component {
@@ -13,7 +13,7 @@ class Button extends Component {
     this._unhighlight = this._unhighlight.bind(this);
   }
   render(){
-    const tc = themeColor(this.props, this.state.active);
+    const tc = theme.color(this.props, this.state.active);
     const {text, children, size, full, clear, outline, round, color, disabled, style} = this.props;
     const onPress = disabled ? null : this.props.onPress;
     const contents = text || children || "";
@@ -26,7 +26,7 @@ class Button extends Component {
 
     if(clear){
       return (
-        <TouchableOpacity {...this.props} style={[style, !full && {borderRadius: buttonRadius, marginVertical: margin/2, marginHorizontal: margin}]} onPress={onPress}>
+        <TouchableOpacity {...this.props} style={[style, !full && {borderRadius: buttonRadius, marginVertical: theme.margin/2, marginHorizontal: theme.margin}]} onPress={onPress}>
           <View
             style={[
               styles.button, styles.clear,
@@ -47,7 +47,7 @@ class Button extends Component {
           background={TouchableNativeFeedback.Ripple(tc.activeColor, false)}
           style={[
             {backgroundColor: tc.backgroundColor},
-            !full && {borderRadius: buttonRadius, marginVertical: margin/2, marginHorizontal: margin},
+            !full && {borderRadius: buttonRadius, marginVertical: theme.margin/2, marginHorizontal: theme.margin},
             round && styles.round,
             disabled && styles.disabled,
             style
@@ -71,7 +71,7 @@ class Button extends Component {
           onHideUnderlay={this._unhighlight}
           {...this.props} style={[
             {backgroundColor: tc.backgroundColor},
-            !full && {borderRadius: buttonRadius, marginVertical: margin/2, marginHorizontal: margin},
+            !full && {borderRadius: buttonRadius, marginVertical: theme.margin/2, marginHorizontal: theme.margin},
             round && styles.round,
             disabled && styles.disabled,
             style
@@ -96,7 +96,7 @@ class Button extends Component {
         background={TouchableNativeFeedback.Ripple(tc.activeColor, false)}
         style={[
           {backgroundColor: tc.backgroundColor},
-          !full && {borderRadius: buttonRadius, marginVertical: margin/2, marginHorizontal: margin},
+          !full && {borderRadius: buttonRadius, marginVertical: theme.margin/2, marginHorizontal: theme.margin},
           round && styles.round,
           disabled && styles.disabled,
           style
@@ -120,7 +120,7 @@ class Button extends Component {
         onHideUnderlay={this._unhighlight}
         {...this.props} style={[
           {backgroundColor: tc.backgroundColor},
-          !full && {borderRadius: buttonRadius, marginVertical: margin/2, marginHorizontal: margin},
+          !full && {borderRadius: buttonRadius, marginVertical: theme.margin/2, marginHorizontal: theme.margin},
           round && styles.round,
           disabled && styles.disabled,
           style

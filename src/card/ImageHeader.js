@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react';
 import {View, Text, Image} from 'react-native';
 import {H5} from '../Typography';
-import {styles} from '../styles/card.ios';
+import {styles} from '../styles/card';
 
 const ImageHeader = (props) => {
   let _image;

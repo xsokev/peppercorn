@@ -1,10 +1,10 @@
 import React, {PropTypes} from 'react';
 import {Text, View} from 'react-native';
-import {themeColor} from './styles';
+import theme from './themes';
 import {styles} from './styles/badge';
 
 const Badge = (props) => {
-  const tc = themeColor(props);
+  const tc = theme.color(props);
   return (
     <View {...props} style={[styles.badge, props.style, {backgroundColor: tc.backgroundColor}]}>
       <Text style={[styles.badgeText, {color: tc.textColor}]}>

@@ -1,13 +1,13 @@
 import React, {Component, PropTypes} from 'react';
 import {Platform, View, TouchableNativeFeedback, TouchableHighlight} from 'react-native';
 import Icon from './Icon';
-import {themeColor, setPosition, margin} from './styles';
+import theme from './themes';
 import {styles, shadow, radius, radiusMini} from './styles/floatbutton';
 
 const FloatButton = (props) => {
     const {icon, mini, position, depth, offset, active, disabled, style} = props;
-    const tc = themeColor(props, active);
-    const bc = props.theme && theme[props.theme] || tc.backgroundColor;
+    const tc = theme.color(props, active);
+    const bc = tc.backgroundColor;
     const onPress = disabled ? null : props.onPress;
     let _icon;
     if(icon){
@@ -26,7 +26,7 @@ const FloatButton = (props) => {
       style={[
         {backgroundColor: bc, borderRadius: radius/2},
         styles.container,
-        position && setPosition(position, (mini?{w:radiusMini, h:radiusMini}:{w:radius, h:radius}), offset)
+        position && theme.position(position, (mini?{w:radiusMini, h:radiusMini}:{w:radius, h:radius}), offset)
       ]}>
       <View
         shadowColor={shadow.color}
@@ -49,7 +49,7 @@ const FloatButton = (props) => {
       style={[
         {backgroundColor: bc, borderRadius: radius/2},
         styles.container,
-        position && setPosition(position, (mini?{w:radiusMini, h:radiusMini}:{w:radius, h:radius}), offset)
+        position && theme.position(position, (mini?{w:radiusMini, h:radiusMini}:{w:radius, h:radius}), offset)
       ]}>
       <View
         shadowColor={shadow.color}
@@ -77,7 +77,7 @@ FloatButton.propTypes = {
   offset: PropTypes.shape({h: PropTypes.number, v: PropTypes.number}),
   active: PropTypes.bool,
   disabled: PropTypes.bool,
-  theme: PropTypes.string,
+  color: PropTypes.string,
   style: PropTypes.any
 };
 FloatButton.defaultProps = {

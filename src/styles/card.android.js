@@ -1,21 +1,23 @@
 import {StyleSheet} from 'react-native';
-import {theme, margin, padding, width} from './index';
+import theme from '../themes';
+
+const {colors, margin, padding, width} = theme;
 
 export const styles = StyleSheet.create({
   card: {
     flexDirection: 'column',
     marginBottom: 2*margin,
     borderRadius: 2,
-    backgroundColor: theme.white
+    backgroundColor: colors.white
   },
   header: {
     padding: 2*padding,
     paddingBottom: padding,
     borderBottomWidth: StyleSheet.hairlineWidth,
-    borderBottomColor: theme.border
+    borderBottomColor: colors.border
   },
   headerText: {
-    color: theme.dark
+    color: colors.dark
   },
   content: {
     padding: padding
@@ -24,10 +26,10 @@ export const styles = StyleSheet.create({
     padding: 2*padding,
     paddingBottom: padding,
     borderTopWidth: StyleSheet.hairlineWidth,
-    borderTopColor: theme.border
+    borderTopColor: colors.border
   },
   footerText: {
-    color: theme.gray
+    color: colors.gray
   },
   imageHeader: {
     flex: 1,
@@ -38,7 +40,7 @@ export const styles = StyleSheet.create({
   },
   imageHeaderText: {
     backgroundColor: 'rgba(0,0,0,0.5)',
-    color: theme.white,
+    color: colors.white,
     padding: 10,
     fontSize: 16,
     fontWeight: '600'

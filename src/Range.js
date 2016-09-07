@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import {View, Text, Slider, Platform} from 'react-native';
 import Icon from './Icon';
-import {theme, themeColor} from './styles';
+import theme from './themes';
 import {styles} from './styles/range';
 
 class Range extends Component {
@@ -14,21 +14,21 @@ class Range extends Component {
   render(){
     const {style, textLeft, textRight, iconLeft, iconRight} = this.props;
     const hasAttachment = textLeft || textRight || iconLeft || iconRight;
-    const themeColor = theme[this.props.theme];
+    const tc = theme.color(props);
     const tint = (() => {
       if(Platform.OS==='ios'){
-        return themeColor;
+        return tc.backgroundColor;
       }
     })();
     if(hasAttachment){
       let left, right;
       if(textLeft || iconLeft){
         if(typeof textLeft === "string"){
-          left = <Text style={[styles.text, themeColor && {color: themeColor}]}>{textLeft}</Text>;
+          left = <Text style={[styles.text, tc && {color: tc.backgroundColor}]}>{textLeft}</Text>;
         } else if(typeof textLeft === "object") {
           left = typeof textLeft.text === 'undefined' ? null : <Text style={[
             styles.text,
-            themeColor && {color: themeColor},
+            tc && {color: tc.backgroundColor},
             textLeft.color && {color: textLeft.color},
             textLeft.size && {fontSize: textLeft.size},
             textLeft.style
@@ -40,7 +40,7 @@ class Range extends Component {
           left = iconLeft.name ? <Icon style={[styles.icon]}
             name={iconLeft.name}
             size={iconLeft.size || 18}
-            color={themeColor || iconLeft.color} /> : null;
+            color={tc.backgroundColor || iconLeft.color} /> : null;
         }
       }
       if(textRight || iconRight){
@@ -50,7 +50,7 @@ class Range extends Component {
           right = typeof textRight.text === 'undefined' ? null : <Text style={[
             styles.text,
             styles.textright,
-            themeColor && {color: themeColor},
+            tc && {color: tc.backgroundColor},
             textRight.color && {color: textRight.color},
             textRight.size && {fontSize: textRight.size},
             textRight.style
@@ -62,7 +62,7 @@ class Range extends Component {
           right = iconRight.name ? <Icon style={[styles.icon]}
             name={iconRight.name}
             size={iconRight.size || 24}
-            color={themeColor || iconRight.color} /> : null;
+            color={tc.backgroundColor || iconRight.color} /> : null;
         }
       }
       return (
@@ -78,7 +78,6 @@ class Range extends Component {
   }
 }
 Range.propTypes = {
-  theme: PropTypes.string,
   textLeft: PropTypes.oneOfType([
     PropTypes.shape({text: PropTypes.string, color: PropTypes.string, size: PropTypes.number}),
     PropTypes.object,
@@ -99,9 +98,8 @@ Range.propTypes = {
     PropTypes.object,
     PropTypes.string
   ]),
+  color: PropTypes.string,
   style: PropTypes.any
 };
-Range.defaultProps = {
-  theme: 'primary'
-};
+Range.defaultProps = {};
 export default Range;
