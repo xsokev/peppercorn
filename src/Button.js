@@ -1,7 +1,9 @@
 import React, {Component, PropTypes} from 'react';
 import {Platform, Text, View, TouchableNativeFeedback, TouchableHighlight, TouchableOpacity} from 'react-native';
 import theme from './themes';
-import {styles, buttonRadius} from './styles/button';
+import {styles} from './styles/button';
+
+const {buttonRadius} = theme;
 
 class Button extends Component {
   constructor(props) {
