@@ -67,11 +67,18 @@ export const styles = StyleSheet.create({
   },
   noteText: {
     flex: 0,
+    marginRight: margin,
     textAlign: 'right',
     color: colors.primary
   },
+  badgeText: {
+    flex: 0,
+    marginRight: margin,
+    color: colors.primary
+  },
   accessory: {
-    flex: 0
+    flex: 0,
+    marginRight: 0
   },
   itemNoLine: {
     borderBottomColor: colors.clear
@@ -108,15 +115,15 @@ export const styles = StyleSheet.create({
   },
   thumb: {
     flex: 0,
-    width: 40,
+    width: rowHeight,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
     marginRight: margin
   },
   thumbImage: {
-    width: 40,
-    height: 40
+    width: rowHeight,
+    height: rowHeight
   },
   avatar: {
     borderRadius: 20
@@ -128,8 +135,10 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-start'
   },
-  iconRight: {
-    minWidth: 16,
+  itemRight: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
     marginLeft: margin
   }
 });

@@ -303,6 +303,8 @@ const theme = {
     underlay: colors.grey200,
     clear: colors.transparent,
 
+    colors,
+    
     margin: 8,
     padding: 8,
     rowHeight: 50,

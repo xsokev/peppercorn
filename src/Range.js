@@ -14,21 +14,24 @@ class Range extends Component {
   render(){
     const {style, textLeft, textRight, iconLeft, iconRight} = this.props;
     const hasAttachment = textLeft || textRight || iconLeft || iconRight;
-    const tc = theme.color(props);
-    const tint = (() => {
-      if(Platform.OS==='ios'){
-        return tc.backgroundColor;
-      }
-    })();
+    let tint = theme.colors.primary;
+    if(theme.hasTheme(this.props)){
+      const tc = theme.color(this.props);
+      tint = (() => {
+        if(Platform.OS==='ios'){
+          return tc.backgroundColor;
+        }
+      })();
+    }
     if(hasAttachment){
       let left, right;
       if(textLeft || iconLeft){
         if(typeof textLeft === "string"){
-          left = <Text style={[styles.text, tc && {color: tc.backgroundColor}]}>{textLeft}</Text>;
+          left = <Text style={[styles.text, {color: tint}]}>{textLeft}</Text>;
         } else if(typeof textLeft === "object") {
           left = typeof textLeft.text === 'undefined' ? null : <Text style={[
             styles.text,
-            tc && {color: tc.backgroundColor},
+            {color: tint},
             textLeft.color && {color: textLeft.color},
             textLeft.size && {fontSize: textLeft.size},
             textLeft.style
@@ -40,29 +43,29 @@ class Range extends Component {
           left = iconLeft.name ? <Icon style={[styles.icon]}
             name={iconLeft.name}
             size={iconLeft.size || 18}
-            color={tc.backgroundColor || iconLeft.color} /> : null;
+            color={iconLeft.color || tint} /> : null;
         }
       }
       if(textRight || iconRight){
         if(typeof textRight === "string"){
-          right = <Text style={[styles.text, styles.textright, themeColor && {color: themeColor}]}>{textRight}</Text>;
+          right = <Text style={[styles.text, styles.textRight, {color: tint}]}>{textRight}</Text>;
         } else if(typeof textRight === "object") {
           right = typeof textRight.text === 'undefined' ? null : <Text style={[
             styles.text,
-            styles.textright,
-            tc && {color: tc.backgroundColor},
+            styles.textRight,
+            {color: tint},
             textRight.color && {color: textRight.color},
             textRight.size && {fontSize: textRight.size},
             textRight.style
           ]}>{textRight.text}</Text>;
         }
         if(typeof iconRight === "string"){
-          right = <Icon style={[styles.icon]} name={iconRight} />;
+          right = <Icon style={[styles.icon, styles.iconRight]} name={iconRight} />;
         } else if(typeof iconRight === "object") {
-          right = iconRight.name ? <Icon style={[styles.icon]}
+          right = iconRight.name ? <Icon style={[styles.icon, styles.iconRight]}
             name={iconRight.name}
             size={iconRight.size || 24}
-            color={tc.backgroundColor || iconRight.color} /> : null;
+            color={iconRight.color || tint} /> : null;
         }
       }
       return (

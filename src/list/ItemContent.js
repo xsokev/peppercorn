@@ -23,10 +23,14 @@ const ItemContent = (props) => {
   const noline = (typeof props.noline !== 'undefined');
   let note;
   if(typeof props.note !== 'undefined'){
-    note = (<Text style={styles.noteText}>{props.note}</Text>);
+    if(typeof props.note==='string'){
+      note = (<Text style={styles.noteText}>{props.note}</Text>);
+    } else {
+      note = props.note;
+    }
   } else if(typeof props.badge !== 'undefined'){
     if(typeof props.badge==='string'){
-      note = (<Badge text={props.badge} />);
+      note = (<Badge style={styles.badgeText} text={props.badge} />);
     } else {
       note = props.badge;
     }

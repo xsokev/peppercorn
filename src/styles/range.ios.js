@@ -7,15 +7,15 @@ export const styles = StyleSheet.create({
   range: {
     flex: 0,
     flexDirection: 'row',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     alignItems: 'center',
-    paddingHorizontal: 5,
-    paddingVertical: 2
+    paddingHorizontal: padding,
+    paddingVertical: padding/2
   },
   slider: {
     flex: 1,
     height: 10,
-    margin: 10
+    margin: margin
   },
   text: {
     flex: 0,
@@ -23,13 +23,17 @@ export const styles = StyleSheet.create({
     fontWeight: '400',
     fontSize: 12,
     paddingHorizontal: padding/2,
-    textAlign: 'right',
+    justifyContent: 'flex-start'
   },
-  textright: {
+  textRight: {
     textAlign: 'left',
-    fontSize: 16
+    fontSize: 14,
+    justifyContent: 'flex-end'
   },
   icon: {
-    
+    justifyContent: 'flex-start'
+  },
+  iconRight: {
+    justifyContent: 'flex-end'
   }
 });

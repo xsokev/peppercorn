@@ -126,6 +126,24 @@ const themeColor = (props, active) => {
     activeColor
   };
 }
+const hasTheme = (props) => {
+  if(props.primary || 
+     props.secondary || 
+     props.calm || 
+     props.energized ||
+     props.danger ||
+     props.royal ||
+     props.dark ||
+     props.light ||
+     props.gray ||
+     props.stable ||
+     props.white ||
+     props.black ||
+     props.clear){
+    return true
+  }
+  return false;
+}
 const setPosition = function (pos, dim, off){
   const center = (width - dim.w)/2;
   const middle = (height - dim.h)/2;
@@ -177,6 +195,7 @@ const helpers = {
     rgbToHex, hexToRGB, textFromRGB, textFromHex, 
     shade, height, width,
 
+    hasTheme,
     color: themeColor,
     position: setPosition,
 
