@@ -1,8 +1,9 @@
 import React, {PropTypes} from 'react';
 import {View, Text} from 'react-native';
-import {themeColor} from '../styles';
+import theme from '../themes';
 import {styles} from '../styles/actionbar';
 
+const {color} = theme;
 const ActionItemCenter = ({children}) => (
   <View style={[styles.actionBarItem, styles.actionBarCenter]}>{children}</View>
 )
@@ -14,7 +15,7 @@ const ActionItemRight = ({children}) => (
 )
 
 const ActionBar = (props) => {
-  const tc = themeColor(props);
+  const tc = color(props);
   let center = (<ActionItemCenter />),
       left = (<ActionItemLeft />),
       right = (<ActionItemRight />);
@@ -41,9 +42,9 @@ const ActionBar = (props) => {
   return (
     <View
       style={[
-        styles.toolbar,
-        props.header && styles.toolbarHeader,
-        props.footer && styles.toolbarFooter,
+        styles.actionbar,
+        props.header && styles.actionbarHeader,
+        props.footer && styles.actionbarFooter,
         {backgroundColor: tc.backgroundColor},
         props.style
       ]}>
@@ -67,7 +68,6 @@ ActionBar.propTypes = {
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node
   ]),
-  theme: PropTypes.string,
   footer: PropTypes.bool,
   header: PropTypes.bool,
   style: PropTypes.any

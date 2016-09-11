@@ -1,7 +1,11 @@
 import {StyleSheet} from 'react-native';
-import {theme, margin, padding, width, actionbarHeight} from './';
+import theme from '../themes';
+
+const {colors, margin, padding, width, actionbarHeight} = theme;
 
 const sideWidth = 50;
+const statusbarHeight = 20;
+
 export const styles = StyleSheet.create({
   actionbar: {
     height: actionbarHeight,
@@ -12,8 +16,8 @@ export const styles = StyleSheet.create({
   actionbarHeader: {
     position: 'relative',
     top: 0, left: 0, right: 0,
-    height: actionbarHeight+20,
-    paddingTop: 20
+    height: actionbarHeight+statusbarHeight,
+    paddingTop: statusbarHeight
   },
   actionbarFooter: {
     alignSelf: 'flex-end',
@@ -25,7 +29,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     alignItems: 'center',
     borderWidth: 0,
-    backgroundColor: theme.clear
+    backgroundColor: colors.clear
   },
   actionItemText: {
     flex: 1,
@@ -37,11 +41,11 @@ export const styles = StyleSheet.create({
   },
   actionBarItem: {
     flexDirection: 'row',
-    backgroundColor: theme.clear
+    backgroundColor: colors.clear
   },
   actionBarCenter: {
     flex: 1,
-    backgroundColor: theme.clear
+    backgroundColor: colors.clear
   },
   actionBarTitle: {
     flex: 1,

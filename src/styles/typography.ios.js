@@ -1,5 +1,7 @@
 import {StyleSheet} from 'react-native';
-import {theme, margin, padding, width} from './index';
+import theme from '../themes';
+
+const {margin, padding, width} = theme;
 
 export const styles = StyleSheet.create({
   h1: {

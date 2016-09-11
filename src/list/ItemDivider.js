@@ -4,7 +4,7 @@ import {styles} from '../styles/list';
 
 const ItemDivider = (props) => (
   <View {...props} style={[styles.itemDivider, props.style]}>
-    <Text {...props} style={[styles.itemDividerText, props.textStyle]}>
+    <Text style={[styles.itemDividerText, props.textStyle]}>
       {(props.text || props.children || "").toUpperCase()}
     </Text>
   </View>

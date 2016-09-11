@@ -1,11 +1,13 @@
 import React, {PropTypes} from 'react';
 import {TouchableOpacity, View, Text} from 'react-native';
 import Icon from '../Icon';
-import {theme, themeColor, margin} from '../styles';
+import theme from '../themes';
 import {styles} from '../styles/actionbar';
 
+const {colors, color, margin} = theme;
+
 const ActionItem = (props) => {
-  const tc = themeColor(props);
+  const tc = color(props);
   let _icon, _label;
   if(props.icon){
     if(typeof props.icon === 'string'){
@@ -18,7 +20,7 @@ const ActionItem = (props) => {
     if(typeof props.label === 'string'){
       _label = (<Text style={[styles.actionItemText, {color: tc.textColor}]}>{props.label}</Text>);
     } else {
-      _label = (<Text style={[styles.actionItemText, {color: props.label.theme && theme[props.label.theme] || tc.textColor}]}>{props.label.text}</Text>);
+      _label = (<Text style={[styles.actionItemText, {color: props.label.theme && colors[props.label.theme] || tc.textColor}]}>{props.label.text}</Text>);
     }
   }
   return (

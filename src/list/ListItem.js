@@ -1,5 +1,9 @@
 import React, {PropTypes} from 'react';
-import {Item, ItemText, ItemThumb, ItemContent, ItemIcon} from './';
+import Item from './Item';
+import ItemContent from './ItemContent';
+import ItemText from './ItemText';
+import ItemIcon from './ItemIcon';
+import ItemThumb from './ItemThumb';
 
 const ListItem = (props) => {
   let _thumb, _icon;

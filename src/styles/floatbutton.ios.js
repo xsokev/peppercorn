@@ -1,8 +1,10 @@
 import {StyleSheet, PixelRatio} from 'react-native';
-import {theme, margin} from './';
+import theme from '../themes';
 
-const radius = PixelRatio.getPixelSizeForLayoutSize(28);
-const radiusMini = PixelRatio.getPixelSizeForLayoutSize(20);
+const {colors, margin, floatMiniRadius, floatRadius} = theme;
+
+const radius = PixelRatio.getPixelSizeForLayoutSize(floatRadius);
+const radiusMini = PixelRatio.getPixelSizeForLayoutSize(floatMiniRadius);
 
 export const styles = StyleSheet.create({
   container: {
@@ -24,7 +26,7 @@ export const styles = StyleSheet.create({
   },
   buttonIcon: {
     flex: 0,
-    backgroundColor: theme.clear,
+    backgroundColor: colors.clear,
   },
   disabled: {
     opacity: 0.7

@@ -1,39 +1,41 @@
 import {StyleSheet} from 'react-native';
-import {theme, margin, padding, rowHeight} from './';
+import theme from '../themes';
+
+const {colors, margin, padding, rowHeight} = theme;
 
 export const styles = StyleSheet.create({
   list: {
     flex: 1,
     borderBottomWidth: StyleSheet.hairlineWidth,
-    borderColor: theme.clear,
-    backgroundColor: theme.light
+    borderColor: colors.clear,
+    backgroundColor: colors.light
   },
   listMargin: {
-    paddingHorizontal: margin*2
+    paddingHorizontal: padding*2
   },
   item: {
-      flex: 1,
-      flexDirection: 'row',
-      justifyContent: 'space-around',
-      alignItems: 'center',
-      paddingLeft: padding,
-      minHeight: rowHeight,
-      backgroundColor: theme.white
-    },
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingLeft: padding,
+    paddingRight: 0,
+    minHeight: rowHeight,
+    backgroundColor: colors.white
+  },
   itemContent: {
     flex: 1,
     minHeight: rowHeight,
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'center',
-    paddingRight: margin,
-    backgroundColor: theme.white,
-    borderBottomColor: theme.border,
+    paddingRight: padding,
+    backgroundColor: colors.white,
+    borderBottomColor: colors.border,
     borderBottomWidth: StyleSheet.hairlineWidth
   },
   multilineContainer: {
     minHeight: rowHeight,
-    backgroundColor: theme.clear,
+    backgroundColor: colors.clear,
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
     marginVertical: margin
@@ -57,7 +59,7 @@ export const styles = StyleSheet.create({
     paddingLeft: margin,
     paddingTop: margin*2,
     paddingBottom: margin,
-    backgroundColor: theme.light
+    backgroundColor: colors.light
   },
   itemDividerText: {
     fontSize: 14,
@@ -66,13 +68,13 @@ export const styles = StyleSheet.create({
   noteText: {
     flex: 0,
     textAlign: 'right',
-    color: theme.primary
+    color: colors.primary
   },
   accessory: {
     flex: 0
   },
   itemNoLine: {
-    borderBottomColor: theme.clear
+    borderBottomColor: colors.clear
   },
   itemHeader: {
     flex: 0,
@@ -81,8 +83,8 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-start',
     paddingLeft: padding,
-    backgroundColor: theme.white,
-    borderBottomColor: theme.border,
+    backgroundColor: colors.white,
+    borderBottomColor: colors.border,
     borderBottomWidth: StyleSheet.hairlineWidth
   },
   itemHeaderText: {
@@ -95,14 +97,14 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-start',
     paddingHorizontal: padding,
-    backgroundColor: theme.light,
+    backgroundColor: colors.light,
   },
   itemFooterText: {
     flex: 1,
     fontSize: 12,
     marginVertical: padding,
     fontWeight: '200',
-    color: theme.darkActive
+    color: colors.darkActive
   },
   thumb: {
     flex: 0,
@@ -121,15 +123,13 @@ export const styles = StyleSheet.create({
   },
   icon: {
     flex: 0,
-    minWidth: 32,
+    width: 32,
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
-    marginRight: margin
+    justifyContent: 'flex-start'
   },
   iconRight: {
     minWidth: 16,
-    marginRight: 0,
     marginLeft: margin
   }
 });

@@ -1,17 +1,21 @@
 import React, {PropTypes} from 'react';
 import {Platform, View, Text} from 'react-native';
-import ItemIcon from './ItemIcon';
+import Icon from '../Icon';
 import Badge from '../Badge';
 import {styles} from '../styles/list';
+
+const ItemRight = ({children}) => (
+  <View style={[styles.itemRight]}>{children}</View>
+)
 
 const ItemContent = (props) => {
   // check Platform and use
   let accessory;
   if(typeof props.accessory !== 'undefined'){
     if(props.accessory==='checkmark'){
-      accessory = (<ItemIcon name="check" theme="primary" style={styles.accessory} right={true} />);
+      accessory = (<Icon name="check" style={styles.accessory} right={true} primary />);
     } else if(props.accessory==='disclosure'){
-      accessory = (<ItemIcon name={Platform.OS==='android'?'md-arrow-forward':'ios-arrow-forward'} set="Ionicons" theme="gray" style={styles.accessory} right={true} />);
+      accessory = (<Icon name={Platform.OS==='android'?'md-arrow-forward':'ios-arrow-forward'} set="Ionicons" style={styles.accessory} right={true} gray />);
     } else if(props.accessory==='detail'){
 
     }
@@ -30,8 +34,10 @@ const ItemContent = (props) => {
   return (
     <View {...props} style={[styles.itemContent, noline && styles.itemNoLine, props.style]}>
       <View style={styles.itemText}>{props.children}</View>
-      {note}
-      {accessory}
+      <View style={[styles.itemRight]}>
+        {note}
+        {accessory}
+      </View>
     </View>
   );
 }

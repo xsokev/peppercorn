@@ -4,7 +4,7 @@ import {styles} from '../styles/list';
 
 const ItemFooter = (props) => (
   <View {...props} style={[styles.itemFooter, props.style]}>
-    <Text {...props} style={[styles.itemFooterText, props.textStyle]}>
+    <Text style={[styles.itemFooterText, props.textStyle]}>
       {props.children}
     </Text>
   </View>

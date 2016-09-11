@@ -1,7 +1,8 @@
 import {StyleSheet} from 'react-native';
-import {theme, padding} from './';
+import theme from '../themes';
 
-const buttonRadius = 5;
+const {colors, padding, buttonRadius} = theme;
+
 export const styles = StyleSheet.create({
   button: {
     flex: 0,
@@ -16,7 +17,7 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: theme.clear,
+    backgroundColor: colors.clear,
     textAlign: 'center',
     fontSize: 14
   },
@@ -25,7 +26,7 @@ export const styles = StyleSheet.create({
   },
   clear: {
     borderWidth: 0,
-    backgroundColor: theme.clear
+    backgroundColor: colors.clear
   },
   round: {
     borderRadius: 50
@@ -62,4 +63,3 @@ export const styles = StyleSheet.create({
 
   }
 });
-export {buttonRadius};

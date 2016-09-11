@@ -4,7 +4,7 @@ import {styles} from '../styles/list';
 
 const ItemHeader = (props) => (
   <View {...props} style={[styles.itemHeader, props.style]}>
-    <Text {...props} style={[styles.itemHeaderText, props.textStyle]}>
+    <Text style={[styles.itemHeaderText, props.textStyle]}>
       {props.children}
     </Text>
   </View>

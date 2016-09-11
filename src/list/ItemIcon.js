@@ -14,7 +14,6 @@ ItemIcon.propTypes = {
   name: PropTypes.string,
   set: PropTypes.string,
   size: PropTypes.number,
-  theme: PropTypes.string,
   color: PropTypes.string,
   right: PropTypes.bool,
   style: PropTypes.any

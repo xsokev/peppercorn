@@ -1,5 +1,7 @@
 import {StyleSheet} from 'react-native';
-import {theme, margin, padding, width} from './index';
+import theme from '../themes';
+
+const {colors, margin, padding, width} = theme;
 
 export const styles = StyleSheet.create({
   range: {
@@ -17,7 +19,7 @@ export const styles = StyleSheet.create({
   },
   text: {
     flex: 0,
-    color: theme.black,
+    color: colors.black,
     fontWeight: '400',
     fontSize: 12,
     paddingHorizontal: padding/2,

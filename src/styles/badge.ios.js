@@ -1,15 +1,17 @@
 import {StyleSheet} from 'react-native';
-import {theme} from './index';
+import theme from '../themes';
+
+const {colors, padding} = theme;
 
 export const styles = StyleSheet.create({
   badge: {
     flex: 0,
-    paddingHorizontal: 10,
+    paddingHorizontal: padding,
     paddingVertical: 3,
     borderRadius: 50
   },
   badgeText: {
-    backgroundColor: theme.clear,
+    backgroundColor: colors.clear,
     textAlign: 'center',
     fontWeight: '600',
     fontSize: 14

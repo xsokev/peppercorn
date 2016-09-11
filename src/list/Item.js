@@ -1,19 +1,20 @@
 import React, {PropTypes} from 'react';
 import {Platform, TouchableNativeFeedback, TouchableHighlight, View} from 'react-native';
-import {theme} from '../styles';
+import theme from '../themes';
 import {styles} from '../styles/list';
 
+const {colors} = theme;
 const Item = (props) => (
   (Platform.OS === 'android') ? 
   <TouchableNativeFeedback {...props}
     onPress={props.onPress}
-    background={TouchableNativeFeedback.Ripple(theme.light, false)}>
+    background={TouchableNativeFeedback.Ripple(colors.light, false)}>
     <View style={[styles.item, props.style]}>
       {props.children}
     </View>
   </TouchableNativeFeedback> :
   <TouchableHighlight {...props}
-    underlay={theme.light}
+    underlay={colors.light}
     onPress={props.onPress}>
     <View style={[styles.item, props.style]}>
       {props.children}

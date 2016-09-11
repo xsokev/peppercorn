@@ -1,4 +1,4 @@
-import { Dimensions } from 'react-native';
+import { Dimensions, PixelRatio } from 'react-native';
 import theme from './materialui';
 
 const defaulttheme = {
@@ -23,9 +23,9 @@ const defaulttheme = {
     rowHeight: 50,
     actionbarHeight: 44,
     activeColorShade: -0.15,
-    buttonRadius: 10,
-    floatRadius: 10,
-    floatMiniRadius: 10,
+    buttonRadius: 5,
+    floatRadius: 28,
+    floatMiniRadius: 20,
     floatShadow: 10
 }
 
@@ -81,6 +81,12 @@ const themeColor = (props, active) => {
     color = theme.royal || defaulttheme.royal;
   } else if(props.dark){
     color = theme.dark || defaulttheme.dark;
+  } else if(props.light){
+    color = theme.light || defaulttheme.light;
+  } else if(props.gray){
+    color = theme.gray || defaulttheme.gray;
+  } else if(props.stable){
+    color = theme.stable || defaulttheme.stable;
   } else if(props.white){
     color = theme.white || defaulttheme.white;
   } else if(props.black){
