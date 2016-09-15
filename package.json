@@ -2,7 +2,7 @@
   "name": "peppercorn",
   "version": "0.0.3",
   "description": "A sprinkle of UI flavor for React Native applications.",
-  "main": "./src/index.js",
+  "main": "./dist/index.js",
   "repository": "https://github.com/xsokev/peppercorn.git",
   "dependencies": {
     "react-native-vector-icons": "^2.0.3"
