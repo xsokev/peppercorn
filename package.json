@@ -10,9 +10,16 @@
   "peerDependencies": {
     "react-native": "^0.29.0"
   },
-  "keywords": ["react native", "ui", "tools", "ux", "mobile"],
+  "keywords": [
+    "react native",
+    "ui",
+    "tools",
+    "ux",
+    "mobile"
+  ],
   "author": "Kevin Armstrong",
   "email": "kevin@kevinandre.com",
   "license": "ISC",
-  "homepage": "https://xsokev.github.io/peppercorn/"
+  "homepage": "https://xsokev.github.io/peppercorn/",
+  "devDependencies": {}
 }

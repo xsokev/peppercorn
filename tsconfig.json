@@ -1,8 +1,24 @@
 {
     "compilerOptions": {
-        "allowJs": true
+        "allowJs": true,
+        "rootDir": "./tsrc/",
+        "outDir": "./dist/",
+        "sourceMap": false,
+        "noImplicitAny": true,
+        "module": "commonjs",
+        "target": "es5",
+        "jsx": "react"
     },
-    "exclude": [
-        "node_modules"
+    "files": [
+        "./tsrc/index.ts"
     ]
 }
+
+/*
+"exclude": [
+    "node_modules",
+    "docs",
+    "typings",
+    "dist"
+]
+*/
