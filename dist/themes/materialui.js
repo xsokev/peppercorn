@@ -1,5 +1,4 @@
-"use strict";
-exports.colors = {
+export const colors = {
     red50: '#ffebee',
     red100: '#ffcdd2',
     red200: '#ef9a9a',
@@ -266,23 +265,23 @@ exports.colors = {
     darkWhite: 'rgba(255, 255, 255, 0.87)',
     lightWhite: 'rgba(255, 255, 255, 0.54)'
 };
-var theme = {
-    white: exports.colors.white,
-    black: exports.colors.black,
-    light: exports.colors.grey50,
-    gray: exports.colors.grey300,
-    stable: exports.colors.grey100,
-    primary: exports.colors.blue500,
-    secondary: exports.colors.amber500,
-    calm: exports.colors.cyan500,
-    energized: exports.colors.orange500,
-    danger: exports.colors.red500,
-    royal: exports.colors.deepPurple400,
-    dark: exports.colors.grey800,
-    border: exports.colors.grey200,
-    underlay: exports.colors.grey200,
-    clear: exports.colors.transparent,
-    colors: exports.colors,
+const theme = {
+    white: colors.white,
+    black: colors.black,
+    light: colors.grey50,
+    gray: colors.grey300,
+    stable: colors.grey100,
+    primary: colors.blue500,
+    secondary: colors.amber500,
+    calm: colors.cyan500,
+    energized: colors.orange500,
+    danger: colors.red500,
+    royal: colors.deepPurple400,
+    dark: colors.grey800,
+    border: colors.grey200,
+    underlay: colors.grey200,
+    clear: colors.transparent,
+    colors,
     margin: 8,
     padding: 8,
     rowHeight: 50,
@@ -293,5 +292,4 @@ var theme = {
     floatMiniRadius: 10,
     floatShadow: 10
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = theme;
+export default theme;

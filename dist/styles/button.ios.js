@@ -1,8 +1,7 @@
-"use strict";
-var react_native_1 = require('react-native');
-var themes_1 = require('../themes');
-var colors = themes_1.default.colors, padding = themes_1.default.padding, buttonRadius = themes_1.default.buttonRadius;
-var styles = react_native_1.StyleSheet.create({
+import { StyleSheet } from 'react-native';
+import theme from '../themes';
+const { colors, padding, buttonRadius } = theme;
+const styles = StyleSheet.create({
     button: {
         flex: 0,
         flexDirection: 'row',
@@ -60,5 +59,4 @@ var styles = react_native_1.StyleSheet.create({
     },
     disabledtext: {}
 });
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = styles;
+export default styles;

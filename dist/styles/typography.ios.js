@@ -1,8 +1,7 @@
-"use strict";
-var react_native_1 = require('react-native');
-var themes_1 = require('../themes');
-var margin = themes_1.default.margin, padding = themes_1.default.padding, width = themes_1.default.width, colors = themes_1.default.colors;
-var styles = react_native_1.StyleSheet.create({
+import { StyleSheet } from 'react-native';
+import theme from '../themes';
+const { margin, padding, width, colors } = theme;
+const styles = StyleSheet.create({
     h1: {
         marginBottom: margin,
         fontWeight: '500',
@@ -35,7 +34,7 @@ var styles = react_native_1.StyleSheet.create({
     },
     hr: {
         marginBottom: margin,
-        borderBottomWidth: react_native_1.StyleSheet.hairlineWidth,
+        borderBottomWidth: StyleSheet.hairlineWidth,
         borderBottomColor: colors.border
     },
     br: {
@@ -69,5 +68,4 @@ var styles = react_native_1.StyleSheet.create({
         textAlign: 'right'
     }
 });
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = styles;
+export default styles;

@@ -1,8 +1,7 @@
-"use strict";
-var react_native_1 = require('react-native');
-var themes_1 = require('../themes');
-var colors = themes_1.default.colors, margin = themes_1.default.margin, padding = themes_1.default.padding, width = themes_1.default.width;
-var styles = react_native_1.StyleSheet.create({
+import { StyleSheet } from 'react-native';
+import theme from '../themes';
+const { colors, margin, padding, width } = theme;
+const styles = StyleSheet.create({
     range: {
         flex: 0,
         flexDirection: 'row',
@@ -36,5 +35,4 @@ var styles = react_native_1.StyleSheet.create({
         justifyContent: 'flex-end'
     }
 });
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = styles;
+export default styles;

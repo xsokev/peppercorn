@@ -1,4 +1,3 @@
-"use strict";
 var __assign = (this && this.__assign) || Object.assign || function(t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
         s = arguments[i];
@@ -7,15 +6,15 @@ var __assign = (this && this.__assign) || Object.assign || function(t) {
     }
     return t;
 };
-var react_1 = require('react');
-var react_native_1 = require('react-native');
-var Typography_1 = require('../Typography');
-var styles_1 = require('../styles');
-var Card = function (props) {
-    var header, footer;
+import React, { PropTypes } from 'react';
+import { View } from 'react-native';
+import { H5 } from '../Typography';
+import { cardStyles as styles, cardShadow as shadow } from '../styles';
+const Card = (props) => {
+    let header, footer;
     if (typeof props.header !== 'undefined') {
         if (typeof props.header === 'string') {
-            header = (react_1.default.createElement(react_native_1.View, {style: styles_1.cardStyles.header}, react_1.default.createElement(Typography_1.H5, {style: styles_1.cardStyles.headerText}, props.header)));
+            header = (React.createElement(View, {style: styles.header}, React.createElement(H5, {style: styles.headerText}, props.header)));
         }
         else {
             header = props.header;
@@ -23,30 +22,29 @@ var Card = function (props) {
     }
     if (typeof props.footer !== 'undefined') {
         if (typeof props.footer === 'string') {
-            footer = (react_1.default.createElement(react_native_1.View, {style: styles_1.cardStyles.footer}, react_1.default.createElement(Typography_1.H5, {style: styles_1.cardStyles.footerText}, props.footer)));
+            footer = (React.createElement(View, {style: styles.footer}, React.createElement(H5, {style: styles.footerText}, props.footer)));
         }
         else {
-            footer = (react_1.default.createElement(react_native_1.View, {style: [styles_1.cardStyles.footer, { padding: 0, paddingBottom: 0 }]}, props.footer));
+            footer = (React.createElement(View, {style: [styles.footer, { padding: 0, paddingBottom: 0 }]}, props.footer));
         }
     }
-    return (react_1.default.createElement(react_native_1.View, __assign({}, props, {shadowColor: styles_1.cardShadow.color, shadowOffset: styles_1.cardShadow.offset, shadowOpacity: styles_1.cardShadow.opacity, shadowRadius: styles_1.cardShadow.radius, style: [styles_1.cardStyles.card, props.style]}), header, react_1.default.createElement(react_native_1.View, {style: props.padding && styles_1.cardStyles.content}, props.children), footer));
+    return (React.createElement(View, __assign({}, props, {shadowColor: shadow.color, shadowOffset: shadow.offset, shadowOpacity: shadow.opacity, shadowRadius: shadow.radius, style: [styles.card, props.style]}), header, React.createElement(View, {style: props.padding && styles.content}, props.children), footer));
 };
 Card.propTypes = {
-    children: react_1.PropTypes.oneOfType([
-        react_1.PropTypes.arrayOf(react_1.PropTypes.node),
-        react_1.PropTypes.node
+    children: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.node),
+        PropTypes.node
     ]),
-    header: react_1.PropTypes.oneOfType([
-        react_1.PropTypes.string,
-        react_1.PropTypes.node
+    header: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.node
     ]),
-    footer: react_1.PropTypes.oneOfType([
-        react_1.PropTypes.string,
-        react_1.PropTypes.node
+    footer: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.node
     ]),
-    padding: react_1.PropTypes.bool,
-    style: react_1.PropTypes.any
+    padding: PropTypes.bool,
+    style: PropTypes.any
 };
 Card.defaultProps = {};
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = Card;
+export default Card;

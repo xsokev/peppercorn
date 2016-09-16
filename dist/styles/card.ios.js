@@ -1,8 +1,7 @@
-"use strict";
-var react_native_1 = require('react-native');
-var themes_1 = require('../themes');
-var colors = themes_1.default.colors, margin = themes_1.default.margin, padding = themes_1.default.padding, width = themes_1.default.width;
-exports.styles = react_native_1.StyleSheet.create({
+import { StyleSheet } from 'react-native';
+import theme from '../themes';
+const { colors, margin, padding, width } = theme;
+export const styles = StyleSheet.create({
     card: {
         flexDirection: 'column',
         marginBottom: 2 * margin,
@@ -12,7 +11,7 @@ exports.styles = react_native_1.StyleSheet.create({
     header: {
         padding: 2 * padding,
         paddingBottom: padding,
-        borderBottomWidth: react_native_1.StyleSheet.hairlineWidth,
+        borderBottomWidth: StyleSheet.hairlineWidth,
         borderBottomColor: colors.border
     },
     headerText: {
@@ -24,7 +23,7 @@ exports.styles = react_native_1.StyleSheet.create({
     footer: {
         padding: 2 * padding,
         paddingBottom: padding,
-        borderTopWidth: react_native_1.StyleSheet.hairlineWidth,
+        borderTopWidth: StyleSheet.hairlineWidth,
         borderTopColor: colors.border
     },
     footerText: {
@@ -45,7 +44,7 @@ exports.styles = react_native_1.StyleSheet.create({
         fontWeight: '600'
     }
 });
-exports.shadow = {
+export const shadow = {
     color: "rgba(0, 0, 0, 0.3)",
     offset: {
         width: 0,
@@ -54,5 +53,4 @@ exports.shadow = {
     opacity: 1,
     radius: 2
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = exports.styles;
+export default styles;

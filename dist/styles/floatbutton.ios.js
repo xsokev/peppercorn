@@ -1,12 +1,9 @@
-"use strict";
-var react_native_1 = require('react-native');
-var themes_1 = require('../themes');
-var colors = themes_1.default.colors, margin = themes_1.default.margin, floatMiniRadius = themes_1.default.floatMiniRadius, floatRadius = themes_1.default.floatRadius;
-var radius = react_native_1.PixelRatio.getPixelSizeForLayoutSize(floatRadius);
-exports.radius = radius;
-var radiusMini = react_native_1.PixelRatio.getPixelSizeForLayoutSize(floatMiniRadius);
-exports.radiusMini = radiusMini;
-var styles = react_native_1.StyleSheet.create({
+import { StyleSheet, PixelRatio } from 'react-native';
+import theme from '../themes';
+const { colors, margin, floatMiniRadius, floatRadius } = theme;
+const radius = PixelRatio.getPixelSizeForLayoutSize(floatRadius);
+const radiusMini = PixelRatio.getPixelSizeForLayoutSize(floatMiniRadius);
+const styles = StyleSheet.create({
     container: {
         alignSelf: 'flex-start',
     },
@@ -33,8 +30,8 @@ var styles = react_native_1.StyleSheet.create({
     },
     disabledtext: {}
 });
-exports.styles = styles;
-exports.shadow = {
+export { radius, radiusMini, styles };
+export const shadow = {
     color: "rgba(0, 0, 0, 0.3)",
     offset: {
         width: 0,
@@ -43,5 +40,4 @@ exports.shadow = {
     opacity: 1,
     radius: 2
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = styles;
+export default styles;

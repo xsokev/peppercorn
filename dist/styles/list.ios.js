@@ -1,11 +1,10 @@
-"use strict";
-var react_native_1 = require('react-native');
-var themes_1 = require('../themes');
-var colors = themes_1.default.colors, margin = themes_1.default.margin, padding = themes_1.default.padding, rowHeight = themes_1.default.rowHeight;
-var styles = react_native_1.StyleSheet.create({
+import { StyleSheet } from 'react-native';
+import theme from '../themes';
+const { colors, margin, padding, rowHeight } = theme;
+const styles = StyleSheet.create({
     list: {
         flex: 1,
-        borderBottomWidth: react_native_1.StyleSheet.hairlineWidth,
+        borderBottomWidth: StyleSheet.hairlineWidth,
         borderColor: colors.clear,
         backgroundColor: colors.light
     },
@@ -30,7 +29,7 @@ var styles = react_native_1.StyleSheet.create({
         paddingRight: padding,
         backgroundColor: colors.white,
         borderBottomColor: colors.border,
-        borderBottomWidth: react_native_1.StyleSheet.hairlineWidth
+        borderBottomWidth: StyleSheet.hairlineWidth
     },
     multilineContainer: {
         minHeight: rowHeight,
@@ -91,7 +90,7 @@ var styles = react_native_1.StyleSheet.create({
         paddingLeft: padding,
         backgroundColor: colors.white,
         borderBottomColor: colors.border,
-        borderBottomWidth: react_native_1.StyleSheet.hairlineWidth
+        borderBottomWidth: StyleSheet.hairlineWidth
     },
     itemHeaderText: {
         fontSize: 14,
@@ -141,5 +140,4 @@ var styles = react_native_1.StyleSheet.create({
         marginLeft: margin
     }
 });
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = styles;
+export default styles;

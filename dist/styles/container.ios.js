@@ -1,8 +1,7 @@
-"use strict";
-var react_native_1 = require('react-native');
-var themes_1 = require('../themes');
-var colors = themes_1.default.colors, padding = themes_1.default.padding;
-var styles = react_native_1.StyleSheet.create({
+import { StyleSheet } from 'react-native';
+import theme from '../themes';
+const { colors, padding } = theme;
+const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: colors.light
@@ -11,5 +10,4 @@ var styles = react_native_1.StyleSheet.create({
         padding: padding
     }
 });
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = styles;
+export default styles;

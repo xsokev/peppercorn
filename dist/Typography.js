@@ -1,4 +1,3 @@
-"use strict";
 var __assign = (this && this.__assign) || Object.assign || function(t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
         s = arguments[i];
@@ -7,55 +6,44 @@ var __assign = (this && this.__assign) || Object.assign || function(t) {
     }
     return t;
 };
-var react_1 = require('react');
-var react_native_1 = require('react-native');
-var styles_1 = require('./styles');
-var propTypes = {
-    children: react_1.PropTypes.oneOfType([
-        react_1.PropTypes.arrayOf(react_1.PropTypes.node),
-        react_1.PropTypes.node,
-        react_1.PropTypes.string,
+import React, { PropTypes } from 'react';
+import { View, Text } from 'react-native';
+import { typographyStyles as styles } from './styles';
+const propTypes = {
+    children: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.node),
+        PropTypes.node,
+        PropTypes.string,
     ]),
-    style: react_1.PropTypes.any,
+    style: PropTypes.any,
 };
-var H1 = function (props) { return (react_1.default.createElement(react_native_1.Text, __assign({}, props, {style: [styles_1.typographyStyles.h1, props.style]}), props.children)); };
-exports.H1 = H1;
+const H1 = (props) => (React.createElement(Text, __assign({}, props, {style: [styles.h1, props.style]}), props.children));
 H1.propTypes = propTypes;
-var H2 = function (props) { return (react_1.default.createElement(react_native_1.Text, __assign({}, props, {style: [styles_1.typographyStyles.h2, props.style]}), props.children)); };
-exports.H2 = H2;
+const H2 = (props) => (React.createElement(Text, __assign({}, props, {style: [styles.h2, props.style]}), props.children));
 H2.propTypes = propTypes;
-var H3 = function (props) { return (react_1.default.createElement(react_native_1.Text, __assign({}, props, {style: [styles_1.typographyStyles.h3, props.style]}), props.children)); };
-exports.H3 = H3;
+const H3 = (props) => (React.createElement(Text, __assign({}, props, {style: [styles.h3, props.style]}), props.children));
 H3.propTypes = propTypes;
-var H4 = function (props) { return (react_1.default.createElement(react_native_1.Text, __assign({}, props, {style: [styles_1.typographyStyles.h4, props.style]}), props.children)); };
-exports.H4 = H4;
+const H4 = (props) => (React.createElement(Text, __assign({}, props, {style: [styles.h4, props.style]}), props.children));
 H4.propTypes = propTypes;
-var H5 = function (props) { return (react_1.default.createElement(react_native_1.Text, __assign({}, props, {style: [styles_1.typographyStyles.h5, props.style]}), props.children)); };
-exports.H5 = H5;
+const H5 = (props) => (React.createElement(Text, __assign({}, props, {style: [styles.h5, props.style]}), props.children));
 H5.propTypes = propTypes;
-var H6 = function (props) { return (react_1.default.createElement(react_native_1.Text, __assign({}, props, {style: [styles_1.typographyStyles.h6, props.style]}), props.children)); };
-exports.H6 = H6;
+const H6 = (props) => (React.createElement(Text, __assign({}, props, {style: [styles.h6, props.style]}), props.children));
 H6.propTypes = propTypes;
-var P = function (props) {
-    var center = typeof props.center !== 'undefined';
-    var right = typeof props.right !== 'undefined';
-    return (react_1.default.createElement(react_native_1.Text, __assign({}, props, {style: [styles_1.typographyStyles.p, props.style, center && styles_1.typographyStyles.textCenter, right && styles_1.typographyStyles.textRight]}), props.children));
+const P = (props) => {
+    const center = typeof props.center !== 'undefined';
+    const right = typeof props.right !== 'undefined';
+    return (React.createElement(Text, __assign({}, props, {style: [styles.p, props.style, center && styles.textCenter, right && styles.textRight]}), props.children));
 };
-exports.P = P;
 P.propTypes = propTypes;
-var A = function (props) { return (react_1.default.createElement(react_native_1.Text, __assign({}, props, {style: [styles_1.typographyStyles.a, props.style]}), props.children)); };
-exports.A = A;
+const A = (props) => (React.createElement(Text, __assign({}, props, {style: [styles.a, props.style]}), props.children));
 A.propTypes = propTypes;
-var BLOCKQUOTE = function (props) { return (react_1.default.createElement(react_native_1.View, __assign({}, props, {style: styles_1.typographyStyles.blockquote}), react_1.default.createElement(react_native_1.Text, {style: [styles_1.typographyStyles.blockquoteText, props.style]}, props.children))); };
-exports.BLOCKQUOTE = BLOCKQUOTE;
+const BLOCKQUOTE = (props) => (React.createElement(View, __assign({}, props, {style: styles.blockquote}), React.createElement(Text, {style: [styles.blockquoteText, props.style]}, props.children)));
 BLOCKQUOTE.propTypes = propTypes;
-var HR = function (props) { return (react_1.default.createElement(react_native_1.View, __assign({}, props, {style: [styles_1.typographyStyles.hr, props.style]}))); };
-exports.HR = HR;
+const HR = (props) => (React.createElement(View, __assign({}, props, {style: [styles.hr, props.style]})));
 HR.propTypes = propTypes;
-var BR = function (props) { return (react_1.default.createElement(react_native_1.View, __assign({}, props, {style: [styles_1.typographyStyles.br, props.style]}))); };
-exports.BR = BR;
+const BR = (props) => (React.createElement(View, __assign({}, props, {style: [styles.br, props.style]})));
 BR.propTypes = propTypes;
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = {
-    H1: H1, H2: H2, H3: H3, H4: H4, H5: H5, H6: H6, P: P, A: A, BLOCKQUOTE: BLOCKQUOTE, HR: HR, BR: BR
+export { H1, H2, H3, H4, H5, H6, P, A, BLOCKQUOTE, HR, BR };
+export default {
+    H1, H2, H3, H4, H5, H6, P, A, BLOCKQUOTE, HR, BR
 };

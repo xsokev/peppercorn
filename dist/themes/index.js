@@ -1,7 +1,6 @@
-"use strict";
-var react_native_1 = require('react-native');
-var materialui_1 = require('./materialui');
-var defaulttheme = {
+import { Dimensions } from 'react-native';
+import theme from './materialui';
+const defaulttheme = {
     white: "#FFFFFF",
     black: "#000000",
     light: "#FAFAFA",
@@ -27,32 +26,32 @@ var defaulttheme = {
     floatMiniRadius: 20,
     floatShadow: 10
 };
-var _a = react_native_1.Dimensions.get('window'), height = _a.height, width = _a.width;
-var componentToHex = function (c) {
-    var hex = c.toString(16);
+const { height, width } = Dimensions.get('window');
+const componentToHex = c => {
+    const hex = c.toString(16);
     return hex.length === 1 ? "0" + hex : hex;
 };
-var rgbToHex = function (r, g, b) { return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b); };
-var hexToRGB = function (hex) {
-    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+const rgbToHex = (r, g, b) => "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+const hexToRGB = hex => {
+    const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
     return result ? {
         r: parseInt(result[1], 16),
         g: parseInt(result[2], 16),
         b: parseInt(result[3], 16)
     } : null;
 };
-var textFromRGB = function (r, g, b) { return (r * 0.299 + g * 0.587 + b * 0.114) > 186 ? (materialui_1.default.black || defaulttheme.black) : (materialui_1.default.white || defaulttheme.white); };
-var textFromHex = function (hex) {
-    var rgb = hexToRGB(hex);
+const textFromRGB = (r, g, b) => (r * 0.299 + g * 0.587 + b * 0.114) > 186 ? (theme.black || defaulttheme.black) : (theme.white || defaulttheme.white);
+const textFromHex = (hex) => {
+    const rgb = hexToRGB(hex);
     return textFromRGB(rgb.r, rgb.g, rgb.b);
 };
-var shade = function (hex, lum) {
+const shade = (hex, lum) => {
     hex = String(hex).replace(/[^0-9a-f]/gi, '');
     if (hex.length < 6) {
         hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
     }
     lum = lum || 0;
-    var rgb = "#", c, i;
+    let rgb = "#", c, i;
     for (i = 0; i < 3; i++) {
         c = parseInt(hex.substr(i * 2, 2), 16);
         c = Math.round(Math.min(Math.max(0, c + (c * lum)), 255)).toString(16);
@@ -60,51 +59,51 @@ var shade = function (hex, lum) {
     }
     return rgb;
 };
-var themeColor = function (props, active) {
-    var color = materialui_1.default.stable || defaulttheme.stable;
+const themeColor = (props, active) => {
+    let color = theme.stable || defaulttheme.stable;
     if (props.color) {
         color = props.color;
     }
     else if (props.primary) {
-        color = materialui_1.default.primary || defaulttheme.primary;
+        color = theme.primary || defaulttheme.primary;
     }
     else if (props.secondary) {
-        color = materialui_1.default.secondary || defaulttheme.secondary;
+        color = theme.secondary || defaulttheme.secondary;
     }
     else if (props.calm) {
-        color = materialui_1.default.calm || defaulttheme.calm;
+        color = theme.calm || defaulttheme.calm;
     }
     else if (props.energized) {
-        color = materialui_1.default.energized || defaulttheme.energized;
+        color = theme.energized || defaulttheme.energized;
     }
     else if (props.danger) {
-        color = materialui_1.default.danger || defaulttheme.danger;
+        color = theme.danger || defaulttheme.danger;
     }
     else if (props.royal) {
-        color = materialui_1.default.royal || defaulttheme.royal;
+        color = theme.royal || defaulttheme.royal;
     }
     else if (props.dark) {
-        color = materialui_1.default.dark || defaulttheme.dark;
+        color = theme.dark || defaulttheme.dark;
     }
     else if (props.light) {
-        color = materialui_1.default.light || defaulttheme.light;
+        color = theme.light || defaulttheme.light;
     }
     else if (props.gray) {
-        color = materialui_1.default.gray || defaulttheme.gray;
+        color = theme.gray || defaulttheme.gray;
     }
     else if (props.stable) {
-        color = materialui_1.default.stable || defaulttheme.stable;
+        color = theme.stable || defaulttheme.stable;
     }
     else if (props.white) {
-        color = materialui_1.default.white || defaulttheme.white;
+        color = theme.white || defaulttheme.white;
     }
     else if (props.black) {
-        color = materialui_1.default.black || defaulttheme.black;
+        color = theme.black || defaulttheme.black;
     }
     else if (props.clear) {
-        color = materialui_1.default.black || defaulttheme.black;
+        color = theme.black || defaulttheme.black;
     }
-    var activeColor = shade(color, materialui_1.default.activeColorShade || defaulttheme.activeColorShade || -0.15);
+    const activeColor = shade(color, theme.activeColorShade || defaulttheme.activeColorShade || -0.15);
     if (props.outline) {
         if (active) {
             return {
@@ -117,28 +116,28 @@ var themeColor = function (props, active) {
         else {
             return {
                 borderColor: color,
-                backgroundColor: materialui_1.default.clear || defaulttheme.clear,
+                backgroundColor: theme.clear || defaulttheme.clear,
                 textColor: color,
-                activeColor: activeColor
+                activeColor
             };
         }
     }
     else if (props.clear) {
         return {
-            borderColor: materialui_1.default.clear || defaulttheme.clear,
-            backgroundColor: materialui_1.default.clear || defaulttheme.clear,
+            borderColor: theme.clear || defaulttheme.clear,
+            backgroundColor: theme.clear || defaulttheme.clear,
             textColor: color,
-            activeColor: activeColor
+            activeColor
         };
     }
     return {
         borderColor: color,
         backgroundColor: color,
         textColor: textFromHex(color),
-        activeColor: activeColor
+        activeColor
     };
 };
-var hasTheme = function (props) {
+const hasTheme = (props) => {
     if (props.primary ||
         props.secondary ||
         props.calm ||
@@ -156,11 +155,11 @@ var hasTheme = function (props) {
     }
     return false;
 };
-var setPosition = function (pos, dim, off) {
-    var center = (width - dim.w) / 2;
-    var middle = (height - dim.h) / 2;
-    var margin = materialui_1.default.margin || defaulttheme.margin;
-    var positionStyles = { position: 'absolute' };
+const setPosition = function (pos, dim, off) {
+    const center = (width - dim.w) / 2;
+    const middle = (height - dim.h) / 2;
+    const margin = theme.margin || defaulttheme.margin;
+    let positionStyles = { position: 'absolute' };
     switch (pos) {
         case "TL":
             positionStyles.top = off.v + margin;
@@ -201,22 +200,21 @@ var setPosition = function (pos, dim, off) {
     }
     return positionStyles;
 };
-var helpers = {
-    colors: materialui_1.default,
-    rgbToHex: rgbToHex, hexToRGB: hexToRGB, textFromRGB: textFromRGB, textFromHex: textFromHex,
-    shade: shade, height: height, width: width,
-    hasTheme: hasTheme,
+const helpers = {
+    colors: theme,
+    rgbToHex, hexToRGB, textFromRGB, textFromHex,
+    shade, height, width,
+    hasTheme,
     color: themeColor,
     position: setPosition,
-    margin: materialui_1.default.margin || defaulttheme.margin,
-    padding: materialui_1.default.padding || defaulttheme.padding,
-    rowHeight: materialui_1.default.rowHeight || defaulttheme.rowHeight,
-    actionbarHeight: materialui_1.default.actionbarHeight || defaulttheme.actionbarHeight,
-    activeColorShade: materialui_1.default.activeColorShade || defaulttheme.activeColorShade,
-    buttonRadius: materialui_1.default.buttonRadius || defaulttheme.buttonRadius,
-    floatRadius: materialui_1.default.floatRadius || defaulttheme.floatRadius,
-    floatMiniRadius: materialui_1.default.floatMiniRadius || defaulttheme.floatMiniRadius,
-    floatShadow: materialui_1.default.floatShadow || defaulttheme.floatShadow
+    margin: theme.margin || defaulttheme.margin,
+    padding: theme.padding || defaulttheme.padding,
+    rowHeight: theme.rowHeight || defaulttheme.rowHeight,
+    actionbarHeight: theme.actionbarHeight || defaulttheme.actionbarHeight,
+    activeColorShade: theme.activeColorShade || defaulttheme.activeColorShade,
+    buttonRadius: theme.buttonRadius || defaulttheme.buttonRadius,
+    floatRadius: theme.floatRadius || defaulttheme.floatRadius,
+    floatMiniRadius: theme.floatMiniRadius || defaulttheme.floatMiniRadius,
+    floatShadow: theme.floatShadow || defaulttheme.floatShadow
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = helpers;
+export default helpers;

@@ -1,10 +1,9 @@
-"use strict";
-var react_native_1 = require('react-native');
-var themes_1 = require('../themes');
-var colors = themes_1.default.colors, margin = themes_1.default.margin, padding = themes_1.default.padding, width = themes_1.default.width, actionbarHeight = themes_1.default.actionbarHeight;
-var sideWidth = 50;
-var statusbarHeight = 20;
-var styles = react_native_1.StyleSheet.create({
+import { StyleSheet } from 'react-native';
+import theme from '../themes';
+const { colors, margin, padding, width, actionbarHeight } = theme;
+const sideWidth = 50;
+const statusbarHeight = 20;
+const styles = StyleSheet.create({
     actionbar: {
         height: actionbarHeight,
         flexDirection: 'row',
@@ -62,5 +61,4 @@ var styles = react_native_1.StyleSheet.create({
         paddingLeft: padding
     }
 });
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = styles;
+export default styles;
