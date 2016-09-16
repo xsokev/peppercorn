@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react';
 import { Platform, View, TouchableNativeFeedback, TouchableHighlight } from 'react-native';
 import Icon from './Icon';
-import theme from './themes';
-import { floatbuttonStyles as styles, floatShadow as shadow, floatRadius as radius, floatRadiusMini as radiusMini } from './styles';
+import theme from './themes/index';
+import { floatButtonStyles as styles, floatShadow as shadow, floatRadius as radius, floatRadiusMini as radiusMini } from './styles/index';
 const FloatButton = (props) => {
     const { icon, mini, position, depth, offset, active, disabled, style } = props;
     const tc = theme.color(props, active);

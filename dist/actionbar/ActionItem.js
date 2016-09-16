@@ -34,8 +34,8 @@ const ActionItem = (props) => {
             { backgroundColor: tc.backgroundColor },
             props.style
         ]}, _icon, _label));
-        const action = props.disabled ? null : props.action;
     }
+    const action = props.disabled ? null : props.action;
     return (React.createElement(TouchableOpacity, {style: [{ marginHorizontal: margin, backgroundColor: 'rgba(0,0,0,0.3)' }], onPress: action}, contents));
 };
 ActionItem.propTypes = {

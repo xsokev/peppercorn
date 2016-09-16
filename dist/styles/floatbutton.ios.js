@@ -1,9 +1,9 @@
 import { StyleSheet, PixelRatio } from 'react-native';
 import theme from '../themes';
 const { colors, margin, floatMiniRadius, floatRadius } = theme;
-const radius = PixelRatio.getPixelSizeForLayoutSize(floatRadius);
-const radiusMini = PixelRatio.getPixelSizeForLayoutSize(floatMiniRadius);
-const styles = StyleSheet.create({
+export const radius = PixelRatio.getPixelSizeForLayoutSize(floatRadius);
+export const radiusMini = PixelRatio.getPixelSizeForLayoutSize(floatMiniRadius);
+export const styles = StyleSheet.create({
     container: {
         alignSelf: 'flex-start',
     },
@@ -30,7 +30,6 @@ const styles = StyleSheet.create({
     },
     disabledtext: {}
 });
-export { radius, radiusMini, styles };
 export const shadow = {
     color: "rgba(0, 0, 0, 0.3)",
     offset: {

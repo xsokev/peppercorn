@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react';
 import { View, Text } from 'react-native';
-import ActionItem from './ActionItem';
 import theme from '../themes/index';
 import { actionBarStyles as styles } from '../styles/index';
 const { color } = theme;
@@ -37,11 +36,17 @@ const ActionBar = (props) => {
 };
 ActionBar.propTypes = {
     title: PropTypes.oneOfType([
-        PropTypes.instanceOf(ActionItem),
+        PropTypes.instanceOf(PropTypes.node),
         PropTypes.string
     ]),
-    left: PropTypes.instanceOf(ActionItem),
-    right: PropTypes.instanceOf(ActionItem),
+    left: PropTypes.oneOfType([
+        PropTypes.node,
+        PropTypes.arrayOf(PropTypes.node)
+    ]),
+    right: PropTypes.oneOfType([
+        PropTypes.node,
+        PropTypes.arrayOf(PropTypes.node)
+    ]),
     footer: PropTypes.bool,
     header: PropTypes.bool,
     style: PropTypes.any

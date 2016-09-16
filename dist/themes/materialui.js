@@ -287,9 +287,9 @@ const theme = {
     rowHeight: 50,
     actionbarHeight: 44,
     activeColorShade: -0.15,
-    buttonRadius: 10,
-    floatRadius: 10,
-    floatMiniRadius: 10,
+    buttonRadius: 5,
+    floatRadius: 28,
+    floatMiniRadius: 20,
     floatShadow: 10
 };
 export default theme;
