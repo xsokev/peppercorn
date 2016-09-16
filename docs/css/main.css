@@ -3,26 +3,40 @@
 
 body {
   padding-top: 40px; }
-  body .title-bar {
-    background-color: #0a437f; }
-    body .title-bar.fixed {
+  body .top-bar {
+    background-color: #0a437f;
+    z-index: 100; }
+    body .top-bar.fixed {
       position: fixed;
       left: 0;
       right: 0;
       top: 0; }
+    body .top-bar .top-bar-right {
+      flex: 0; }
+      body .top-bar .top-bar-right .menu {
+        background-color: transparent; }
+        body .top-bar .top-bar-right .menu a {
+          color: #FFFFFF; }
   body .row {
     display: flex;
     flex: 1 1 auto; }
   body .sidebar {
-    position: fixed;
-    left: 0;
-    top: 42px;
-    bottom: 0;
-    overflow: auto;
     background-color: #F9F9F9;
-    width: 300px !important;
-    flex: 0 auto;
     text-align: center; }
+    body .sidebar.small {
+      position: static;
+      width: 250px !important; }
+      body .sidebar.small h1 {
+        font-weight: 100;
+        font-size: 1.7em; }
+    body .sidebar.large {
+      position: fixed;
+      left: 0;
+      top: 42px;
+      bottom: 0;
+      overflow: auto;
+      width: 300px !important;
+      flex: 0 auto; }
     body .sidebar img {
       width: 100px;
       margin: 10px auto; }
@@ -48,16 +62,136 @@ body {
           background-color: #f9f9f9; }
       body .sidebar ul.menu li:hover {
         background-color: #ececec; }
+      body .sidebar ul.menu:last-child {
+        margin-bottom: 0; }
   body .main {
     margin-left: 300px;
     padding: 20px; }
+    body .main.small {
+      margin-left: 0; }
+    body .main h2 {
+      margin-top: 0px; }
     body .main h3 {
-      margin-top: 20px; }
-    body .main .code {
-      font-family: Courier New, Courier, monospace;
-      padding: 5px 10px;
-      background-color: #F9F9F9;
-      border-left: 5px solid #e58a00; }
+      margin-top: 50px; }
+    body .main h4 {
+      margin-top: 30px; }
+    body .main .highlight pre {
+      padding: 5px 10px; }
+      body .main .highlight pre code {
+        border: 0;
+        background-color: transparent; }
+        body .main .highlight pre code span:first-child {
+          margin-left: -5px; }
+    body .main .marvel-device iframe {
+      width: 100%;
+      height: 100%; }
+  body .off-canvas {
+    background-color: #F9F9F9; }
+
+.highlight code, .highlight pre {
+  color: #fdce93;
+  background-color: #3f3f3f; }
+
+.highlight .hll {
+  background-color: #222; }
+
+.highlight .err {
+  color: #e37170;
+  background-color: #3d3535; }
+
+.highlight .k {
+  color: #f0dfaf; }
+
+.highlight .p {
+  color: #41706f; }
+
+.highlight .cs {
+  color: #cd0000;
+  font-weight: 700; }
+
+.highlight .gd {
+  color: #cd0000; }
+
+.highlight .ge {
+  color: #ccc;
+  font-style: italic; }
+
+.highlight .gr {
+  color: red; }
+
+.highlight .go {
+  color: gray; }
+
+.highlight .gs {
+  color: #ccc;
+  font-weight: 700; }
+
+.highlight .gu {
+  color: purple;
+  font-weight: 700; }
+
+.highlight .gt {
+  color: #0040D0; }
+
+.highlight .kc {
+  color: #dca3a3; }
+
+.highlight .kd {
+  color: #ffff86; }
+
+.highlight .kn {
+  color: #dfaf8f;
+  font-weight: 700; }
+
+.highlight .kp {
+  color: #cdcf99; }
+
+.highlight .kr {
+  color: #cdcd00; }
+
+.highlight .ni {
+  color: #c28182; }
+
+.highlight .ne {
+  color: #c3bf9f;
+  font-weight: 700; }
+
+.highlight .nn {
+  color: #8fbede; }
+
+.highlight .vi {
+  color: #ffffc7; }
+
+.highlight .c, .preview-zenburn .highlight .g, .preview-zenburn .highlight .cm, .preview-zenburn .highlight .cp, .preview-zenburn .highlight .c1 {
+  color: #7f9f7f; }
+
+.highlight .l, .preview-zenburn .highlight .x, .preview-zenburn .highlight .no, .preview-zenburn .highlight .nd, .preview-zenburn .highlight .nl, .preview-zenburn .highlight .nx, .preview-zenburn .highlight .py, .preview-zenburn .highlight .w {
+  color: #ccc; }
+
+.highlight .n, .preview-zenburn .highlight .nv, .preview-zenburn .highlight .vg {
+  color: #dcdccc; }
+
+.highlight .o, .preview-zenburn .highlight .ow {
+  color: #f0efd0; }
+
+.highlight .gh, .preview-zenburn .highlight .gp {
+  color: #dcdccc;
+  font-weight: 700; }
+
+.highlight .gi, .preview-zenburn .highlight .kt {
+  color: #00cd00; }
+
+.highlight .ld, .preview-zenburn .highlight .s, .preview-zenburn .highlight .sb, .preview-zenburn .highlight .sc, .preview-zenburn .highlight .sd, .preview-zenburn .highlight .s2, .preview-zenburn .highlight .se, .preview-zenburn .highlight .sh, .preview-zenburn .highlight .si, .preview-zenburn .highlight .sx, .preview-zenburn .highlight .sr, .preview-zenburn .highlight .s1, .preview-zenburn .highlight .ss {
+  color: #cc9393; }
+
+.highlight .m, .preview-zenburn .highlight .mf, .preview-zenburn .highlight .mh, .preview-zenburn .highlight .mi, .preview-zenburn .highlight .mo, .preview-zenburn .highlight .il {
+  color: #8cd0d3; }
+
+.highlight .na, .preview-zenburn .highlight .nt {
+  color: #9ac39f; }
+
+.highlight .nb, .preview-zenburn .highlight .nc, .preview-zenburn .highlight .nf, .preview-zenburn .highlight .bp, .preview-zenburn .highlight .vc {
+  color: #efef8f; }
 
 .uikit-button {
   padding: 8px 16px;

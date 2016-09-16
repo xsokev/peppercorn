@@ -1,0 +1,25 @@
+{
+  "name": "peppercorn-website",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "webpack",
+    "build": "webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^15.3.1",
+    "react-fontawesome": "^1.2.0",
+    "react-native-web": "0.0.45"
+  },
+  "devDependencies": {
+    "babel-core": "^6.14.0",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-loader": "^6.2.5",
+    "uglify-loader": "^1.3.0",
+    "webpack": "^1.13.2"
+  }
+}

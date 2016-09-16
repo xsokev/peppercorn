@@ -24,181 +24,476 @@
       <meta name="msapplication-TileImage" content="/img/fav.ico/ms-icon-144x144.png">
       <meta name="theme-color" content="#ffffff">
 
-      <title>Getting Started</title>
+      <title>Theming</title>
       <meta name="keywords" content="react native, ui, kit, tools, user interface, ux, user experience, mobile ui, development, react">
       <meta name="description" content="Set of UI components for use with React Native
 ">
 
-      <link rel="stylesheet" href="/peppercorn/css/foundation.min.css">
-      <link rel="stylesheet" href="/peppercorn/css/main.css">
-      <link rel="canonical" href="https://xsokev.github.io/peppercorn//peppercorn/guide/theming/">
-      <link rel="alternate" type="application/rss+xml" title="Peppercorn" href="https://xsokev.github.io/peppercorn//peppercorn/feed.xml">
+      <link rel="stylesheet" href="/css/foundation.min.css">
+      <link rel="stylesheet" href="/css/main.css">
+      <link rel="canonical" href="https://xsokev.github.io/peppercorn//guide/theming/">
+      <link rel="alternate" type="application/rss+xml" title="Peppercorn" href="https://xsokev.github.io/peppercorn//feed.xml">
   </head>
 
   <body>
-    <div class="title-bar fixed">
-    <div class="title-bar-left">
-        <button class="menu-icon" type="button" data-open="offCanvasLeft"></button>
+    <div class="top-bar fixed">
+    <div class="top-bar-left">
+        <button class="menu-icon show-for-small-only" type="button" data-toggle="offCanvas"></button>
     </div>
-    <div class="title-bar-right">
-        <ul class="menu"></ul>
+    <div class="top-bar-right">
+        <ul class="hide-for-small-only menu">
+          <li><a href="https://github.com/xsokev">Github</a></li>
+        </ul>
     </div>
-</div>
-    <div class="row expanded">
-      <div class="sidebar columns">
-    <a href="/peppercorn/"><img src="/peppercorn/img/blueoutline.png" /></a>
-    <h1>Peppercorn</h1>
-    <ul class="menu vertical">
-        <li class="header">Guide</li>
-        <li><a href="/peppercorn/guide/">Getting Started</a></li>
-        <li><a href="/peppercorn/guide/theming/">Theming</a></li>
-    </ul>
-    <ul class="menu vertical">
-        <li class="header">Components</li>
-        
-        <li>
-            <a href="/peppercorn/comp/actionbar/">
-            ActionBar
-            </a>
-        </li>
-        
-        <li>
-            <a href="/peppercorn#">
-            ActionItem
-            </a>
-        </li>
-        
-        <li>
-            <a href="/peppercorn#">
-            Badge
-            </a>
-        </li>
-        
-        <li>
-            <a href="/peppercorn#">
-            Button
-            </a>
-        </li>
-        
-        <li>
-            <a href="/peppercorn#">
-            Card
-            </a>
-        </li>
-        
-        <li>
-            <a href="/peppercorn#">
-            Container
-            </a>
-        </li>
-        
-        <li>
-            <a href="/peppercorn#">
-            ImageHeader
-            </a>
-        </li>
-        
-        <li>
-            <a href="/peppercorn#">
-            FloatButton
-            </a>
-        </li>
-        
-        <li>
-            <a href="/peppercorn#">
-            Icon
-            </a>
-        </li>
-        
-        <li>
-            <a href="/peppercorn#">
-            Item
-            </a>
-        </li>
-        
-        <li>
-            <a href="/peppercorn#">
-            ItemContent
-            </a>
-        </li>
-        
-        <li>
-            <a href="/peppercorn#">
-            ItemDivider
-            </a>
-        </li>
-        
-        <li>
-            <a href="/peppercorn#">
-            ItemFooter
-            </a>
-        </li>
-        
-        <li>
-            <a href="/peppercorn#">
-            ItemHeader
-            </a>
-        </li>
-        
-        <li>
-            <a href="/peppercorn#">
-            ItemIcon
-            </a>
-        </li>
-        
-        <li>
-            <a href="/peppercorn#">
-            ItemText
-            </a>
-        </li>
-        
-        <li>
-            <a href="/peppercorn#">
-            ItemThumb
-            </a>
-        </li>
-        
-        <li>
-            <a href="/peppercorn#">
-            List
-            </a>
-        </li>
-        
-        <li>
-            <a href="/peppercorn#">
-            ListItem
-            </a>
-        </li>
-        
-        <li>
-            <a href="/peppercorn#">
-            Range
-            </a>
-        </li>
-        
-        <li>
-            <a href="/peppercorn#">
-            ScrollContainer
-            </a>
-        </li>
-        
-    </ul>
-    <ul class="menu vertical">
-        <li class="header">Typography</li>
-        <li><a href="#">Header</a></li>
-        <li><a href="#">Block</a></li>
-    </ul>
 </div>
 
+    <div class="show-for-small-only off-canvas-wrapper">
+      <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+        <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
+          <div class="sidebar small">
+            <a href="/"><img src="/img/blueoutline.png" /></a>
+<h1>Peppercorn</h1>
+<ul class="menu vertical">
+    <li class="header">Guide</li>
+    <li><a href="/guide/">Getting Started</a></li>
+    <li><a href="/guide/theming/">Theming</a></li>
+</ul>
+<ul class="menu vertical">
+    <li class="header">Components</li>
+    
+    <li>
+        <a href="/comp/actionbar/">
+        ActionBar
+        </a>
+    </li>
+    
+    <li>
+        <a href="/comp/actionitem">
+        ActionItem
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        Badge
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        Button
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        Card
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        Container
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        ImageHeader
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        FloatButton
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        Icon
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        Item
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        ItemContent
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        ItemDivider
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        ItemFooter
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        ItemHeader
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        ItemIcon
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        ItemText
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        ItemThumb
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        List
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        ListItem
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        Range
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        ScrollContainer
+        </a>
+    </li>
+    
+</ul>
+<ul class="menu vertical">
+    <li class="header">Typography</li>
+    <li><a href="#">Header</a></li>
+    <li><a href="#">Block</a></li>
+</ul>
+
+          </div>
+        </div>
+        <div class="off-canvas-content" data-off-canvas-content>
+          <div class="main small">
+            <h1>Theming</h1>
+
+<h3>Overview</h3>
+
+<p>Peppercorn allows you to customize the color scheme for your project. It supports several color labels which are directly supported by several components. These labels are:</p>
+<ul>
+    <li>stable</li>
+    <li>primary</li>
+    <li>secondary</li>
+    <li>calm</li>
+    <li>energized</li>
+    <li>danger</li>
+    <li>royal</li>
+    <li>dark</li>
+    <li>light</li>
+    <li>white</li>
+    <li>black</li>
+    <li>gray</li>
+    <li>border</li>
+    <li>underlay</li>
+    <li>clear</li>
+</ul>
+
+<p>This allows for syntax such as:</p>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;Button</span> <span class="na">primary</span><span class="nt">&gt;</span>Go<span class="nt">&lt;/Button&gt;</span>
+<span class="nt">&lt;Badge</span> <span class="na">text=</span><span class="s">"0"</span> <span class="na">danger</span><span class="nt">/&gt;</span></code></pre></figure>
+
+<h3 id="usage">Usage</h3>
+<p>The kit uses the color palette from <a target="_blank" href="https://material.google.com/style/color.html#">Material Design</a>. We have selected certain colors from the palette to be used in the default theme. The remaining colors from Material Design can be accessed using the <code>colors</code> property in the theme module.</p>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">import</span> <span class="p">{</span><span class="nx">theme</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">'peppercorn'</span><span class="p">;</span>
+<span class="kr">const</span> <span class="p">{</span><span class="nx">colors</span><span class="p">}</span> <span class="o">=</span> <span class="nx">theme</span><span class="p">;</span>
+<span class="nx">colors</span><span class="p">.</span><span class="nx">red100</span><span class="p">...</span>
+<span class="nx">colors</span><span class="p">.</span><span class="nx">green100</span><span class="p">...</span>
+<span class="nx">colors</span><span class="p">.</span><span class="nx">blue100</span><span class="p">...</span></code></pre></figure>
+
+<h3 id="custom">Custom Theme</h3>
+<p>There really isn't much to using custom colors through your project. Implementing a theme is as simple as creating a new module somewhere within your project and importing it when needed.</p>
+<p>The theme file should have the structure below.</p>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">colors</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">white</span><span class="p">:</span> <span class="s2">"#FFFFFF"</span><span class="p">,</span>
+  <span class="na">black</span><span class="p">:</span> <span class="s2">"#000000"</span><span class="p">,</span>
+  <span class="na">clr1</span><span class="p">:</span> <span class="s2">"#FF9900"</span><span class="p">,</span>
+  <span class="na">clr2</span><span class="p">:</span> <span class="s2">"#99FF00"</span><span class="p">,</span>
+  <span class="na">clr3</span><span class="p">:</span> <span class="s2">"#9900FF"</span><span class="p">,</span>
+  <span class="p">...</span>
+  <span class="na">clrn</span><span class="p">:</span> <span class="s2">"#0099FF"</span>
+<span class="p">}</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">white</span><span class="p">:</span> <span class="nx">colors</span><span class="p">.</span><span class="nx">white</span><span class="p">,</span>
+  <span class="na">black</span><span class="p">:</span> <span class="nx">colors</span><span class="p">.</span><span class="nx">black</span><span class="p">,</span>
+  <span class="na">primary</span><span class="p">:</span> <span class="nx">colors</span><span class="p">.</span><span class="nx">clr1</span><span class="p">,</span>
+  <span class="na">secondary</span><span class="p">:</span> <span class="nx">colors</span><span class="p">.</span><span class="nx">clr2</span><span class="p">,</span>
+  <span class="p">...</span>
+  <span class="na">margin</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>                <span class="c1">//margin value used throughout the components</span>
+  <span class="na">padding</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>               <span class="c1">//padding value used throughout the components</span>
+  <span class="na">rowHeight</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>            <span class="c1">//minimum row height for list items</span>
+  <span class="na">actionbarHeight</span><span class="p">:</span> <span class="mi">44</span><span class="p">,</span>      <span class="c1">//action bar height </span>
+  <span class="na">activeColorShade</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.15</span><span class="p">,</span>  <span class="c1">//the percentage to use when calculating the color for buttons on touch</span>
+  <span class="na">buttonRadius</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>          <span class="c1">//the border radius to use for buttons</span>
+  <span class="na">floatRadius</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span>          <span class="c1">//the radius of the normal float button</span>
+  <span class="na">floatMiniRadius</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>      <span class="c1">//the radius of the mini float button</span>
+  <span class="na">floatShadow</span><span class="p">:</span> <span class="mi">2</span>            <span class="c1">//the drop shadow value for the float button</span>
+<span class="p">}</span></code></pre></figure>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hide-for-small-only row expanded">
+      <div class="sidebar large">
+        <a href="/"><img src="/img/blueoutline.png" /></a>
+<h1>Peppercorn</h1>
+<ul class="menu vertical">
+    <li class="header">Guide</li>
+    <li><a href="/guide/">Getting Started</a></li>
+    <li><a href="/guide/theming/">Theming</a></li>
+</ul>
+<ul class="menu vertical">
+    <li class="header">Components</li>
+    
+    <li>
+        <a href="/comp/actionbar/">
+        ActionBar
+        </a>
+    </li>
+    
+    <li>
+        <a href="/comp/actionitem">
+        ActionItem
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        Badge
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        Button
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        Card
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        Container
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        ImageHeader
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        FloatButton
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        Icon
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        Item
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        ItemContent
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        ItemDivider
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        ItemFooter
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        ItemHeader
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        ItemIcon
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        ItemText
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        ItemThumb
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        List
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        ListItem
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        Range
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        ScrollContainer
+        </a>
+    </li>
+    
+</ul>
+<ul class="menu vertical">
+    <li class="header">Typography</li>
+    <li><a href="#">Header</a></li>
+    <li><a href="#">Block</a></li>
+</ul>
+
+      </div>
       <div class="main columns">
         <h1>Theming</h1>
 
+<h3>Overview</h3>
+
+<p>Peppercorn allows you to customize the color scheme for your project. It supports several color labels which are directly supported by several components. These labels are:</p>
+<ul>
+    <li>stable</li>
+    <li>primary</li>
+    <li>secondary</li>
+    <li>calm</li>
+    <li>energized</li>
+    <li>danger</li>
+    <li>royal</li>
+    <li>dark</li>
+    <li>light</li>
+    <li>white</li>
+    <li>black</li>
+    <li>gray</li>
+    <li>border</li>
+    <li>underlay</li>
+    <li>clear</li>
+</ul>
+
+<p>This allows for syntax such as:</p>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;Button</span> <span class="na">primary</span><span class="nt">&gt;</span>Go<span class="nt">&lt;/Button&gt;</span>
+<span class="nt">&lt;Badge</span> <span class="na">text=</span><span class="s">"0"</span> <span class="na">danger</span><span class="nt">/&gt;</span></code></pre></figure>
+
+<h3 id="usage">Usage</h3>
+<p>The kit uses the color palette from <a target="_blank" href="https://material.google.com/style/color.html#">Material Design</a>. We have selected certain colors from the palette to be used in the default theme. The remaining colors from Material Design can be accessed using the <code>colors</code> property in the theme module.</p>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">import</span> <span class="p">{</span><span class="nx">theme</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">'peppercorn'</span><span class="p">;</span>
+<span class="kr">const</span> <span class="p">{</span><span class="nx">colors</span><span class="p">}</span> <span class="o">=</span> <span class="nx">theme</span><span class="p">;</span>
+<span class="nx">colors</span><span class="p">.</span><span class="nx">red100</span><span class="p">...</span>
+<span class="nx">colors</span><span class="p">.</span><span class="nx">green100</span><span class="p">...</span>
+<span class="nx">colors</span><span class="p">.</span><span class="nx">blue100</span><span class="p">...</span></code></pre></figure>
+
+<h3 id="custom">Custom Theme</h3>
+<p>There really isn't much to using custom colors through your project. Implementing a theme is as simple as creating a new module somewhere within your project and importing it when needed.</p>
+<p>The theme file should have the structure below.</p>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">colors</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">white</span><span class="p">:</span> <span class="s2">"#FFFFFF"</span><span class="p">,</span>
+  <span class="na">black</span><span class="p">:</span> <span class="s2">"#000000"</span><span class="p">,</span>
+  <span class="na">clr1</span><span class="p">:</span> <span class="s2">"#FF9900"</span><span class="p">,</span>
+  <span class="na">clr2</span><span class="p">:</span> <span class="s2">"#99FF00"</span><span class="p">,</span>
+  <span class="na">clr3</span><span class="p">:</span> <span class="s2">"#9900FF"</span><span class="p">,</span>
+  <span class="p">...</span>
+  <span class="na">clrn</span><span class="p">:</span> <span class="s2">"#0099FF"</span>
+<span class="p">}</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">white</span><span class="p">:</span> <span class="nx">colors</span><span class="p">.</span><span class="nx">white</span><span class="p">,</span>
+  <span class="na">black</span><span class="p">:</span> <span class="nx">colors</span><span class="p">.</span><span class="nx">black</span><span class="p">,</span>
+  <span class="na">primary</span><span class="p">:</span> <span class="nx">colors</span><span class="p">.</span><span class="nx">clr1</span><span class="p">,</span>
+  <span class="na">secondary</span><span class="p">:</span> <span class="nx">colors</span><span class="p">.</span><span class="nx">clr2</span><span class="p">,</span>
+  <span class="p">...</span>
+  <span class="na">margin</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>                <span class="c1">//margin value used throughout the components</span>
+  <span class="na">padding</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>               <span class="c1">//padding value used throughout the components</span>
+  <span class="na">rowHeight</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>            <span class="c1">//minimum row height for list items</span>
+  <span class="na">actionbarHeight</span><span class="p">:</span> <span class="mi">44</span><span class="p">,</span>      <span class="c1">//action bar height </span>
+  <span class="na">activeColorShade</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.15</span><span class="p">,</span>  <span class="c1">//the percentage to use when calculating the color for buttons on touch</span>
+  <span class="na">buttonRadius</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>          <span class="c1">//the border radius to use for buttons</span>
+  <span class="na">floatRadius</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span>          <span class="c1">//the radius of the normal float button</span>
+  <span class="na">floatMiniRadius</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>      <span class="c1">//the radius of the mini float button</span>
+  <span class="na">floatShadow</span><span class="p">:</span> <span class="mi">2</span>            <span class="c1">//the drop shadow value for the float button</span>
+<span class="p">}</span></code></pre></figure>
+
       </div>
-      <script src="/js/vendor/jquery.js" charset="utf-8"></script>
+    </div>
+    <script src="/js/vendor/jquery.js" charset="utf-8"></script>
 <script src="/js/vendor/foundation.min.js" charset="utf-8"></script>
 <script src="/js/app.js" charset="utf-8"></script>
 <script async defer src="https://buttons.github.io/buttons.js"></script>
+<script type="text/javascript">
+  $(function(){
+    setTimeout(function () {
+      var shgt = $(".sidebar").height();
+      var chgt = $(".off-canvas-content").height();
+      if(shgt > chgt){
+        $(".off-canvas-content").css({"padding-bottom": shgt-chgt})
+      }
+    }, 10);
+  })
+</script>
 
-    </div>
   </body>
 </html>

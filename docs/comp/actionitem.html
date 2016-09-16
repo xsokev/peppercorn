@@ -31,7 +31,7 @@
 
       <link rel="stylesheet" href="/css/foundation.min.css">
       <link rel="stylesheet" href="/css/main.css">
-      <link rel="canonical" href="https://xsokev.github.io/peppercorn//comp/actionbar.html">
+      <link rel="canonical" href="https://xsokev.github.io/peppercorn//comp/actionitem.html">
       <link rel="alternate" type="application/rss+xml" title="Peppercorn" href="https://xsokev.github.io/peppercorn//feed.xml">
   </head>
 
@@ -199,13 +199,15 @@
         </div>
         <div class="off-canvas-content" data-off-canvas-content>
           <div class="main small">
-            <h2>ActionBar</h2>
-<p>The ActionBar component is a simple bar that can be placed anywhere within your application where you need action buttons or simple text. You can add items to the bar and position them either on the left, right or center.</p>
-<p>ActionBar is a themeable component.</p>
+            <h2>ActionItem</h2>
+<p>The ActionItem component is used to add items to the ActionBar. These items are typically used to perform actions in your application. E.g. back button, menu button, or settings button.</p>
+<p>ActionItem is a themeable component.</p>
 
 <h4>Usage</h4>
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">import</span> <span class="p">{</span><span class="nx">ActionBar</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">'peppercorn'</span><span class="p">;</span>
-<span class="o">&lt;</span><span class="nx">ActionBar</span> <span class="nx">title</span><span class="o">=</span><span class="s2">"My App"</span> <span class="nx">primary</span><span class="o">/&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">import</span> <span class="p">{</span><span class="nx">ActionBar</span><span class="p">,</span> <span class="nx">ActionItem</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">'peppercorn'</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">backBtn</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nx">ActionItem</span> <span class="nx">label</span><span class="o">=</span><span class="s2">"Back"</span> <span class="nx">icon</span><span class="o">=</span><span class="s2">"arrow-left"</span> <span class="nx">action</span><span class="o">=</span><span class="p">{...}</span> <span class="nx">energized</span> <span class="o">/&gt;</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">infoBtn</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nx">ActionItem</span> <span class="nx">icon</span><span class="o">=</span><span class="s2">"info"</span> <span class="nx">action</span><span class="o">=</span><span class="p">{...}</span> <span class="nx">energized</span> <span class="o">/&gt;</span><span class="p">;</span>
+<span class="o">&lt;</span><span class="nx">ActionBar</span> <span class="nx">left</span><span class="o">=</span><span class="p">{</span><span class="nx">backBtn</span><span class="p">}</span> <span class="nx">right</span><span class="o">=</span><span class="p">{</span><span class="nx">infoBtn</span><span class="p">}</span> <span class="nx">title</span><span class="o">=</span><span class="s2">"My App"</span> <span class="nx">energized</span> <span class="o">/&gt;</span><span class="p">;</span></code></pre></figure>
 
 <h4>Properties</h4>
 <table>
@@ -219,61 +221,65 @@
     
     
     <tr>
-        <td valign="top">title</td>
+        <td valign="top">children</td>
         <td valign="top">
             <ul>
                 
-                <li>ActionItem</li>
+                <li>arrayOf(node)</li>
+                
+                <li>node</li>
+                
+            </ul>
+        </td>
+        <td valign="top">The custom content that can be added to an ActionItem. This can be a single component or several components.</td>
+    </tr>
+    
+    
+    <tr>
+        <td valign="top">label</td>
+        <td valign="top">
+            <ul>
+                
+                <li>shape</li>
                 
                 <li>string</li>
                 
             </ul>
         </td>
-        <td valign="top">The element that is displayed in the center of the ActionBar. This is typically the title of the app. You can specify a string to just show a plain title or you can create a custom title by using an ActionItem and adding elements to it.</td>
+        <td valign="top">The text to be displayed in the ActionItem. You can pass a string to display the text in a simple Text component. The color of the text will be determined by the theme of the ActionItem. You can also pass a shape that has the text and theme and they will be used to display the text in the color you choose. The shape accepts: text:string, theme:string.</td>
     </tr>
     
     
     <tr>
-        <td valign="top">left</td>
+        <td valign="top">icon</td>
         <td valign="top">
             <ul>
                 
-                <li>ActionItem</li>
+                <li>object</li>
+                
+                <li>string</li>
                 
             </ul>
         </td>
-        <td valign="top">The action item that should be placed on the left of the ActionBar.</td>
+        <td valign="top">The icon to be displayed in the ActionItem. You can pass a string to display the icon from the default icon font. See <a href="/comps/icon">Icon</a> for more info. You can also pass an object that can be used to provide more information on how to display the icon. The object can contain any or all of the following: icon:string, set:string, theme:string, size:number, style:object</td>
     </tr>
     
     
     <tr>
-        <td valign="top">right</td>
+        <td valign="top">action</td>
         <td valign="top">
             <ul>
                 
-                <li>ActionItem</li>
+                <li>func</li>
                 
             </ul>
         </td>
-        <td valign="top">The action item that should be placed on the right of the ActionBar.</td>
+        <td valign="top">The action that will be performed when the ActionItem receives a touch event.</td>
     </tr>
     
     
     <tr>
-        <td valign="top">footer</td>
-        <td valign="top">
-            <ul>
-                
-                <li>bool</li>
-                
-            </ul>
-        </td>
-        <td valign="top">Indicator as to whether the ActionBar should be displayed at the bottom of its container. The ActionBar will not scroll with other content within the container.</td>
-    </tr>
-    
-    
-    <tr>
-        <td valign="top">header</td>
+        <td valign="top">disabled</td>
         <td valign="top">
             <ul>
                 
@@ -281,7 +287,7 @@
                 
             </ul>
         </td>
-        <td valign="top">Indicator as to whether the ActionBar should be displayed at the top of its container. The ActionBar will not scroll with other content within the container.</td>
+        <td valign="top">Indicator as to whether the ActionItem can act upon the touch event.</td>
     </tr>
     
     
@@ -302,14 +308,14 @@
 <h4>Example</h4>
 <div class="row">
     <div class="small-12 medium-12 large-12 columns">
-<figure class="highlight"><pre><code class="language-html" data-lang="html">  <span class="nt">&lt;Container&gt;</span>
-    <span class="nt">&lt;ActionBar</span> <span class="na">title=</span><span class="s">"ActionBar"</span> <span class="na">stable</span> <span class="na">header</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;ScrollContainer&gt;</span>
-      <span class="nt">&lt;ActionBar</span> <span class="na">title=</span><span class="s">"My Second Header"</span> <span class="na">primary</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;/ScrollContainer&gt;</span>
-
-    <span class="nt">&lt;ActionBar</span> <span class="na">title=</span><span class="s">"Footer"</span> <span class="na">footer</span> <span class="na">dark</span><span class="nt">/&gt;</span>
-  <span class="nt">&lt;/Container&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">backAction</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nx">ActionItem</span> <span class="nx">label</span><span class="o">=</span><span class="s2">"Back"</span> <span class="nx">icon</span><span class="o">=</span><span class="s2">"angle-left"</span> <span class="nx">primary</span> <span class="o">/&gt;</span>
+<span class="kr">const</span> <span class="nx">menuAction</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nx">ActionItem</span> <span class="nx">icon</span><span class="o">=</span><span class="p">{</span><span class="na">icon</span><span class="p">:</span><span class="s1">'bars'</span><span class="p">,</span> <span class="na">size</span><span class="p">:</span> <span class="mi">24</span><span class="p">}</span> <span class="nx">primary</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="nx">Container</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">ActionBar</span> <span class="nx">title</span><span class="o">=</span><span class="s2">"ActionItem"</span> <span class="nx">stable</span> <span class="nx">header</span><span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="nx">ScrollContainer</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">ActionBar</span> <span class="nx">title</span><span class="o">=</span><span class="s2">"Header"</span> <span class="nx">left</span><span class="o">=</span><span class="p">{</span><span class="nx">backAction</span><span class="p">}</span> <span class="nx">right</span><span class="o">=</span><span class="p">{</span><span class="nx">menuAction</span><span class="p">}</span> <span class="nx">primary</span><span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="sr">/ScrollContainer</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/Container&gt;</span></code></pre></figure>
     </div>
     <div class="small-12 medium-12 large-12 columns">
         <div class="marvel-device iphone5c black">
@@ -319,7 +325,7 @@
             <div class="sensor"></div>
             <div class="speaker"></div>
             <div class="screen">
-                <iframe src="/examples/actionbar.html" frameborder="0"></iframe>
+                <iframe src="/examples/actionitem.html" frameborder="0"></iframe>
             </div>
             <div class="home"></div>
             <div class="bottom-bar"></div>
@@ -478,13 +484,15 @@
 
       </div>
       <div class="main columns">
-        <h2>ActionBar</h2>
-<p>The ActionBar component is a simple bar that can be placed anywhere within your application where you need action buttons or simple text. You can add items to the bar and position them either on the left, right or center.</p>
-<p>ActionBar is a themeable component.</p>
+        <h2>ActionItem</h2>
+<p>The ActionItem component is used to add items to the ActionBar. These items are typically used to perform actions in your application. E.g. back button, menu button, or settings button.</p>
+<p>ActionItem is a themeable component.</p>
 
 <h4>Usage</h4>
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">import</span> <span class="p">{</span><span class="nx">ActionBar</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">'peppercorn'</span><span class="p">;</span>
-<span class="o">&lt;</span><span class="nx">ActionBar</span> <span class="nx">title</span><span class="o">=</span><span class="s2">"My App"</span> <span class="nx">primary</span><span class="o">/&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">import</span> <span class="p">{</span><span class="nx">ActionBar</span><span class="p">,</span> <span class="nx">ActionItem</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">'peppercorn'</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">backBtn</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nx">ActionItem</span> <span class="nx">label</span><span class="o">=</span><span class="s2">"Back"</span> <span class="nx">icon</span><span class="o">=</span><span class="s2">"arrow-left"</span> <span class="nx">action</span><span class="o">=</span><span class="p">{...}</span> <span class="nx">energized</span> <span class="o">/&gt;</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">infoBtn</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nx">ActionItem</span> <span class="nx">icon</span><span class="o">=</span><span class="s2">"info"</span> <span class="nx">action</span><span class="o">=</span><span class="p">{...}</span> <span class="nx">energized</span> <span class="o">/&gt;</span><span class="p">;</span>
+<span class="o">&lt;</span><span class="nx">ActionBar</span> <span class="nx">left</span><span class="o">=</span><span class="p">{</span><span class="nx">backBtn</span><span class="p">}</span> <span class="nx">right</span><span class="o">=</span><span class="p">{</span><span class="nx">infoBtn</span><span class="p">}</span> <span class="nx">title</span><span class="o">=</span><span class="s2">"My App"</span> <span class="nx">energized</span> <span class="o">/&gt;</span><span class="p">;</span></code></pre></figure>
 
 <h4>Properties</h4>
 <table>
@@ -498,61 +506,65 @@
     
     
     <tr>
-        <td valign="top">title</td>
+        <td valign="top">children</td>
         <td valign="top">
             <ul>
                 
-                <li>ActionItem</li>
+                <li>arrayOf(node)</li>
+                
+                <li>node</li>
+                
+            </ul>
+        </td>
+        <td valign="top">The custom content that can be added to an ActionItem. This can be a single component or several components.</td>
+    </tr>
+    
+    
+    <tr>
+        <td valign="top">label</td>
+        <td valign="top">
+            <ul>
+                
+                <li>shape</li>
                 
                 <li>string</li>
                 
             </ul>
         </td>
-        <td valign="top">The element that is displayed in the center of the ActionBar. This is typically the title of the app. You can specify a string to just show a plain title or you can create a custom title by using an ActionItem and adding elements to it.</td>
+        <td valign="top">The text to be displayed in the ActionItem. You can pass a string to display the text in a simple Text component. The color of the text will be determined by the theme of the ActionItem. You can also pass a shape that has the text and theme and they will be used to display the text in the color you choose. The shape accepts: text:string, theme:string.</td>
     </tr>
     
     
     <tr>
-        <td valign="top">left</td>
+        <td valign="top">icon</td>
         <td valign="top">
             <ul>
                 
-                <li>ActionItem</li>
+                <li>object</li>
+                
+                <li>string</li>
                 
             </ul>
         </td>
-        <td valign="top">The action item that should be placed on the left of the ActionBar.</td>
+        <td valign="top">The icon to be displayed in the ActionItem. You can pass a string to display the icon from the default icon font. See <a href="/comps/icon">Icon</a> for more info. You can also pass an object that can be used to provide more information on how to display the icon. The object can contain any or all of the following: icon:string, set:string, theme:string, size:number, style:object</td>
     </tr>
     
     
     <tr>
-        <td valign="top">right</td>
+        <td valign="top">action</td>
         <td valign="top">
             <ul>
                 
-                <li>ActionItem</li>
+                <li>func</li>
                 
             </ul>
         </td>
-        <td valign="top">The action item that should be placed on the right of the ActionBar.</td>
+        <td valign="top">The action that will be performed when the ActionItem receives a touch event.</td>
     </tr>
     
     
     <tr>
-        <td valign="top">footer</td>
-        <td valign="top">
-            <ul>
-                
-                <li>bool</li>
-                
-            </ul>
-        </td>
-        <td valign="top">Indicator as to whether the ActionBar should be displayed at the bottom of its container. The ActionBar will not scroll with other content within the container.</td>
-    </tr>
-    
-    
-    <tr>
-        <td valign="top">header</td>
+        <td valign="top">disabled</td>
         <td valign="top">
             <ul>
                 
@@ -560,7 +572,7 @@
                 
             </ul>
         </td>
-        <td valign="top">Indicator as to whether the ActionBar should be displayed at the top of its container. The ActionBar will not scroll with other content within the container.</td>
+        <td valign="top">Indicator as to whether the ActionItem can act upon the touch event.</td>
     </tr>
     
     
@@ -581,14 +593,14 @@
 <h4>Example</h4>
 <div class="row">
     <div class="small-12 medium-12 large-12 columns">
-<figure class="highlight"><pre><code class="language-html" data-lang="html">  <span class="nt">&lt;Container&gt;</span>
-    <span class="nt">&lt;ActionBar</span> <span class="na">title=</span><span class="s">"ActionBar"</span> <span class="na">stable</span> <span class="na">header</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;ScrollContainer&gt;</span>
-      <span class="nt">&lt;ActionBar</span> <span class="na">title=</span><span class="s">"My Second Header"</span> <span class="na">primary</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;/ScrollContainer&gt;</span>
-
-    <span class="nt">&lt;ActionBar</span> <span class="na">title=</span><span class="s">"Footer"</span> <span class="na">footer</span> <span class="na">dark</span><span class="nt">/&gt;</span>
-  <span class="nt">&lt;/Container&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">backAction</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nx">ActionItem</span> <span class="nx">label</span><span class="o">=</span><span class="s2">"Back"</span> <span class="nx">icon</span><span class="o">=</span><span class="s2">"angle-left"</span> <span class="nx">primary</span> <span class="o">/&gt;</span>
+<span class="kr">const</span> <span class="nx">menuAction</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nx">ActionItem</span> <span class="nx">icon</span><span class="o">=</span><span class="p">{</span><span class="na">icon</span><span class="p">:</span><span class="s1">'bars'</span><span class="p">,</span> <span class="na">size</span><span class="p">:</span> <span class="mi">24</span><span class="p">}</span> <span class="nx">primary</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="nx">Container</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">ActionBar</span> <span class="nx">title</span><span class="o">=</span><span class="s2">"ActionItem"</span> <span class="nx">stable</span> <span class="nx">header</span><span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="nx">ScrollContainer</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">ActionBar</span> <span class="nx">title</span><span class="o">=</span><span class="s2">"Header"</span> <span class="nx">left</span><span class="o">=</span><span class="p">{</span><span class="nx">backAction</span><span class="p">}</span> <span class="nx">right</span><span class="o">=</span><span class="p">{</span><span class="nx">menuAction</span><span class="p">}</span> <span class="nx">primary</span><span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="sr">/ScrollContainer</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/Container&gt;</span></code></pre></figure>
     </div>
     <div class="small-12 medium-12 large-12 columns">
         <div class="marvel-device iphone5c black">
@@ -598,7 +610,7 @@
             <div class="sensor"></div>
             <div class="speaker"></div>
             <div class="screen">
-                <iframe src="/examples/actionbar.html" frameborder="0"></iframe>
+                <iframe src="/examples/actionitem.html" frameborder="0"></iframe>
             </div>
             <div class="home"></div>
             <div class="bottom-bar"></div>

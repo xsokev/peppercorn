@@ -29,175 +29,345 @@
       <meta name="description" content="Set of UI components for use with React Native
 ">
 
-      <link rel="stylesheet" href="/peppercorn/css/foundation.min.css">
-      <link rel="stylesheet" href="/peppercorn/css/main.css">
-      <link rel="canonical" href="https://xsokev.github.io/peppercorn//peppercorn/comp/container.html">
-      <link rel="alternate" type="application/rss+xml" title="Peppercorn" href="https://xsokev.github.io/peppercorn//peppercorn/feed.xml">
+      <link rel="stylesheet" href="/css/foundation.min.css">
+      <link rel="stylesheet" href="/css/main.css">
+      <link rel="canonical" href="https://xsokev.github.io/peppercorn//comp/container.html">
+      <link rel="alternate" type="application/rss+xml" title="Peppercorn" href="https://xsokev.github.io/peppercorn//feed.xml">
   </head>
 
   <body>
-    <div class="title-bar fixed">
-    <div class="title-bar-left">
-        <button class="menu-icon" type="button" data-open="offCanvasLeft"></button>
+    <div class="top-bar fixed">
+    <div class="top-bar-left">
+        <button class="menu-icon show-for-small-only" type="button" data-toggle="offCanvas"></button>
     </div>
-    <div class="title-bar-right">
-        <ul class="menu"></ul>
+    <div class="top-bar-right">
+        <ul class="hide-for-small-only menu">
+          <li><a href="https://github.com/xsokev">Github</a></li>
+        </ul>
     </div>
-</div>
-    <div class="row expanded">
-      <div class="sidebar columns">
-    <a href="/peppercorn/"><img src="/peppercorn/img/blueoutline.png" /></a>
-    <h1>Peppercorn</h1>
-    <ul class="menu vertical">
-        <li class="header">Guide</li>
-        <li><a href="/peppercorn/guide/">Getting Started</a></li>
-        <li><a href="/peppercorn/guide/theming/">Theming</a></li>
-    </ul>
-    <ul class="menu vertical">
-        <li class="header">Components</li>
-        
-        <li>
-            <a href="/peppercorn/comp/actionbar/">
-            ActionBar
-            </a>
-        </li>
-        
-        <li>
-            <a href="/peppercorn#">
-            ActionItem
-            </a>
-        </li>
-        
-        <li>
-            <a href="/peppercorn#">
-            Badge
-            </a>
-        </li>
-        
-        <li>
-            <a href="/peppercorn#">
-            Button
-            </a>
-        </li>
-        
-        <li>
-            <a href="/peppercorn#">
-            Card
-            </a>
-        </li>
-        
-        <li>
-            <a href="/peppercorn#">
-            Container
-            </a>
-        </li>
-        
-        <li>
-            <a href="/peppercorn#">
-            ImageHeader
-            </a>
-        </li>
-        
-        <li>
-            <a href="/peppercorn#">
-            FloatButton
-            </a>
-        </li>
-        
-        <li>
-            <a href="/peppercorn#">
-            Icon
-            </a>
-        </li>
-        
-        <li>
-            <a href="/peppercorn#">
-            Item
-            </a>
-        </li>
-        
-        <li>
-            <a href="/peppercorn#">
-            ItemContent
-            </a>
-        </li>
-        
-        <li>
-            <a href="/peppercorn#">
-            ItemDivider
-            </a>
-        </li>
-        
-        <li>
-            <a href="/peppercorn#">
-            ItemFooter
-            </a>
-        </li>
-        
-        <li>
-            <a href="/peppercorn#">
-            ItemHeader
-            </a>
-        </li>
-        
-        <li>
-            <a href="/peppercorn#">
-            ItemIcon
-            </a>
-        </li>
-        
-        <li>
-            <a href="/peppercorn#">
-            ItemText
-            </a>
-        </li>
-        
-        <li>
-            <a href="/peppercorn#">
-            ItemThumb
-            </a>
-        </li>
-        
-        <li>
-            <a href="/peppercorn#">
-            List
-            </a>
-        </li>
-        
-        <li>
-            <a href="/peppercorn#">
-            ListItem
-            </a>
-        </li>
-        
-        <li>
-            <a href="/peppercorn#">
-            Range
-            </a>
-        </li>
-        
-        <li>
-            <a href="/peppercorn#">
-            ScrollContainer
-            </a>
-        </li>
-        
-    </ul>
-    <ul class="menu vertical">
-        <li class="header">Typography</li>
-        <li><a href="#">Header</a></li>
-        <li><a href="#">Block</a></li>
-    </ul>
 </div>
 
+    <div class="show-for-small-only off-canvas-wrapper">
+      <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+        <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
+          <div class="sidebar small">
+            <a href="/"><img src="/img/blueoutline.png" /></a>
+<h1>Peppercorn</h1>
+<ul class="menu vertical">
+    <li class="header">Guide</li>
+    <li><a href="/guide/">Getting Started</a></li>
+    <li><a href="/guide/theming/">Theming</a></li>
+</ul>
+<ul class="menu vertical">
+    <li class="header">Components</li>
+    
+    <li>
+        <a href="/comp/actionbar/">
+        ActionBar
+        </a>
+    </li>
+    
+    <li>
+        <a href="/comp/actionitem">
+        ActionItem
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        Badge
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        Button
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        Card
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        Container
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        ImageHeader
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        FloatButton
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        Icon
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        Item
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        ItemContent
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        ItemDivider
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        ItemFooter
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        ItemHeader
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        ItemIcon
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        ItemText
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        ItemThumb
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        List
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        ListItem
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        Range
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        ScrollContainer
+        </a>
+    </li>
+    
+</ul>
+<ul class="menu vertical">
+    <li class="header">Typography</li>
+    <li><a href="#">Header</a></li>
+    <li><a href="#">Block</a></li>
+</ul>
+
+          </div>
+        </div>
+        <div class="off-canvas-content" data-off-canvas-content>
+          <div class="main small">
+            <h1>ActionBar</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hide-for-small-only row expanded">
+      <div class="sidebar large">
+        <a href="/"><img src="/img/blueoutline.png" /></a>
+<h1>Peppercorn</h1>
+<ul class="menu vertical">
+    <li class="header">Guide</li>
+    <li><a href="/guide/">Getting Started</a></li>
+    <li><a href="/guide/theming/">Theming</a></li>
+</ul>
+<ul class="menu vertical">
+    <li class="header">Components</li>
+    
+    <li>
+        <a href="/comp/actionbar/">
+        ActionBar
+        </a>
+    </li>
+    
+    <li>
+        <a href="/comp/actionitem">
+        ActionItem
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        Badge
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        Button
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        Card
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        Container
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        ImageHeader
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        FloatButton
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        Icon
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        Item
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        ItemContent
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        ItemDivider
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        ItemFooter
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        ItemHeader
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        ItemIcon
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        ItemText
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        ItemThumb
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        List
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        ListItem
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        Range
+        </a>
+    </li>
+    
+    <li>
+        <a href="#">
+        ScrollContainer
+        </a>
+    </li>
+    
+</ul>
+<ul class="menu vertical">
+    <li class="header">Typography</li>
+    <li><a href="#">Header</a></li>
+    <li><a href="#">Block</a></li>
+</ul>
+
+      </div>
       <div class="main columns">
         <h1>ActionBar</h1>
       </div>
-      <script src="/js/vendor/jquery.js" charset="utf-8"></script>
+    </div>
+    <script src="/js/vendor/jquery.js" charset="utf-8"></script>
 <script src="/js/vendor/foundation.min.js" charset="utf-8"></script>
 <script src="/js/app.js" charset="utf-8"></script>
 <script async defer src="https://buttons.github.io/buttons.js"></script>
+<script type="text/javascript">
+  $(function(){
+    setTimeout(function () {
+      var shgt = $(".sidebar").height();
+      var chgt = $(".off-canvas-content").height();
+      if(shgt > chgt){
+        $(".off-canvas-content").css({"padding-bottom": shgt-chgt})
+      }
+    }, 10);
+  })
+</script>
 
-    </div>
   </body>
 </html>
